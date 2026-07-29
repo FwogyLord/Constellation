@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.671 (2026-07-30) — Anita medal shop
+
+- added live Anita offer ranking by profit per Bronze-equivalent medal
+- added sale value, non-medal cost, trade profit and medal-cost tooltip breakdowns
+- added best-offer highlighting, positive-profit filtering, row controls and fail-closed unknown-cost handling
+- added profile-safe Extra Farming Fortune tier learning and exact remaining Gold Medal, Jacob's Ticket and coin-value guidance
+
 ## 0.9.670 (2026-07-30) — Rare Crop Tracker
 
 - added profile and session tracking for all 21 current rare Garden crop drops

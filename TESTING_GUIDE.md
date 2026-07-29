@@ -2,6 +2,28 @@
 
 You do not need to test everything in one sitting. Start with the five-minute check, then test one game-area session whenever you naturally play that area. Checkboxes are intentionally split into small groups.
 
+## Anita medal shop
+
+### Enable
+
+1. Enable Hercules, `Anita Helper`, `Anita Medal Profit` and `Anita Extra Farming Fortune`.
+2. Visit Anita and open the inventory named exactly `Anita`.
+3. Allow a few seconds for Bazaar and Auction prices to load.
+
+### Test
+
+- [ ] Open Anita. Expected: a side panel ranks valid shop outputs by estimated profit per Bronze-equivalent medal.
+- [ ] Hover one ranked output. Expected: its tooltip shows estimated sale value, non-medal cost, profit per trade, Bronze-equivalent cost and profit per Bronze Medal.
+- [ ] Compare a Gold, Silver and Bronze offer. Expected: medal conversion uses 8, 2 and 1 Bronze medals respectively.
+- [ ] Enable Best Highlight. Expected: only the highest-ranked visible offer receives a green advisory outline.
+- [ ] Enable Positive Only. Expected: zero-loss and losing offers disappear from the panel.
+- [ ] Run `/anitahelper rows 3`. Expected: the panel shows at most three ranked offers.
+- [ ] Find Extra Farming Fortune and hover it. Expected: the tooltip learns the current profile's tier and shows remaining Gold Medals and Jacob's Tickets through tier 15.
+- [ ] If tier learning cannot identify changed Hypixel lore, run `/anitahelper tier <0-15>`. Expected: the tooltip immediately uses the recovery tier without clicking or buying anything.
+- [ ] Change profile and reopen Anita. Expected: the saved Fortune tier does not leak between profiles.
+- [ ] Disable individual Sale, Materials, Trade Profit, Bronze, Tier, Remaining and Ticket Value options. Expected: only the corresponding tooltip lines disappear.
+- [ ] Present an offer with an unrecognized non-medal material or missing price. Expected: that offer is omitted rather than shown with inflated profit.
+
 ## Garden Rare Crop Tracker
 
 ### Enable

@@ -125,6 +125,24 @@ public class HerculesConfig extends BaseConfigGroup {
     public String rareCropPriceSource = "PURCHASE";
     public Map<String, Long> rareCropPersistentDrops = new HashMap<>();
 
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/AnitaShopConfig.kt
+    public boolean anitaHelper = true;
+    public boolean anitaMedalProfit = true;
+    public boolean anitaExtraFarmingFortune = true;
+    public boolean anitaHighlightBest = true;
+    public boolean anitaOnlyPositive = false;
+    public boolean anitaShowSalePrice = true;
+    public boolean anitaShowAdditionalCost = true;
+    public boolean anitaShowTradeProfit = true;
+    public boolean anitaShowBronzeCost = true;
+    public boolean anitaFortuneShowCurrentTier = true;
+    public boolean anitaFortuneShowRemaining = true;
+    public boolean anitaFortuneShowTicketValue = true;
+    public int anitaMaxRows = 10;
+    public int anitaPanelColor = 0xD0181824;
+    public int anitaBestColor = 0x9055FF55;
+    public Map<String, Integer> anitaFortuneTiers = new HashMap<>();
+
     public boolean jacobContestHud = true;
     public boolean jacobShowCrop = true;
     public boolean jacobShowCollected = true;

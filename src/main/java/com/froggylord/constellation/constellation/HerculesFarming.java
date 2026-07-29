@@ -38,6 +38,7 @@ public class HerculesFarming extends BaseConstellation {
         HerculesCropMoney.init(cfg);
         HerculesGardenLevel.init(cfg);
         HerculesRareCropTracker.init(cfg);
+        HerculesAnitaShop.init(cfg);
         registerRenderer(HerculesFarmingLanes::draw);
         registerRenderer(HerculesPests::draw);
         registerRenderer(HerculesPestWaypoint::draw);
@@ -142,5 +143,6 @@ public class HerculesFarming extends BaseConstellation {
         HerculesCropMoney.registerCommands(dispatcher);
         HerculesGardenLevel.registerCommands(dispatcher);
         HerculesRareCropTracker.registerCommands(dispatcher);
+        HerculesAnitaShop.registerCommands(dispatcher);
     }
 }

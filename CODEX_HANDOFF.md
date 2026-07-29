@@ -1665,3 +1665,17 @@ Crop Money's Rare Crops toggle no longer removes Sunflower, Moonflower or Wild R
 Version `0.9.670` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `c43fa1dca9e22188cb4be9d4c4bb5c8be94973a57eae2e784edb37703eb8e480`.
 
 The old `0.9.669` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-013657-0.9.670/`; only `constellation-0.9.670.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.671 Anita medal shop
+
+`HerculesAnitaShop.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory render/tooltip chain in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/AnitaMedalProfit.kt`, `features/garden/inventory/AnitaExtraFarmingFortune.kt`, `config/features/garden/AnitaShopConfig.kt` and `data/jsonobjects/repo/AnitaUpgradeCostsJson.kt`.
+
+The exact `Anita` menu gate reads each visible item's `Cost` section. Gold, Silver and Bronze medals convert to eight, two and one Bronze medals. Jacob's Tickets and recognized extra materials use current replacement prices, while output items use current liquidation value. Stack count and a trailing name quantity are both supported. Offers with unknown non-medal materials, absent internal IDs or unavailable required prices fail closed rather than overstating profit.
+
+The side panel ranks one-to-twenty offers by profit per Bronze-equivalent medal and updates after asynchronous Bazaar or Auction prices arrive. Optional positive-only filtering and a best-offer outline are saved. Hovered ranked items can independently show sale value, non-medal cost, trade profit, Bronze cost and profit per Bronze. All rendering is restricted to the exact menu and never changes a click.
+
+The exact licensed fifteen-tier Extra Farming Fortune table contains 66 remaining Gold Medals and 3,750 base Jacob's Tickets from tier zero. The tooltip learns an explicit tier or the displayed Fortune contribution, including four-Fortune-per-tier conversion, and persists it by SkyBlock profile. It applies the displayed next-tier ticket multiplier to remaining tickets, avoiding the reference's tier-zero divide-by-zero TODO. Current tier, remaining materials and ticket coin value are independent. `/anitahelper` provides status, tier recovery/clear, row limit and every presentation control.
+
+Version `0.9.671` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `e0ad1effc267033b7cb41a6634b52f387cced0821c7151971a161388c566595f`.
+
+The old `0.9.670` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-014725-0.9.671/`; only `constellation-0.9.671.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
