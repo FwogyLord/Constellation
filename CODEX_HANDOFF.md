@@ -1,6 +1,6 @@
 # Codex handoff: Constellation dungeon feature work
 
-Last updated: 2026-07-30 for version 0.9.661 Garden crop milestones.
+Last updated: 2026-07-30 for version 0.9.662 Garden hoe levels.
 
 This file is the durable continuation prompt for a new coding chat. Read it completely, then read `.forge/build-principles.md` before changing anything. Keep this file updated in every feature run, before the final build and deployment.
 
@@ -10,7 +10,7 @@ This file is the durable continuation prompt for a new coding chat. Read it comp
 - Minecraft 26.2 Fabric client for Hypixel SkyBlock.
 - Java package: `com.froggylord.constellation`
 - License: GPL-3.0-only.
-- Current artifact version: `0.9.661`.
+- Current artifact version: `0.9.662`.
 - Main objective: build the useful main SkyBlock features in depth from the user's live `Froggy__Lord Skyblock 26.1.2` Prism settings and licensed local references. Dungeon selection is now broad enough; prioritize Kuudra, slayers, general inventory/UI, Garden, mining, Rift, fishing/hunting, Diana/events, and Crimson Isle based on actual enabled settings.
 - Work in one small feature run at a time. Research, port, build, boot, audit, update this document, and deploy each feature independently.
 - The user repeatedly says `keep building`; continue the queue without requesting phase approval.
@@ -1543,3 +1543,15 @@ The Crop Milestones menu can show per-crop tier numbers, a 13-crop average, capp
 Version `0.9.661` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; Minecraft's runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. The only error was the established benign 401 user-property lookup for the offline headless account. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `0c62c3978f9a520f737fbb5d2ec549a7a2121e190616e44c41efbfcba4843169`.
 
 The old `0.9.660` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-001330-0.9.661/`; only `constellation-0.9.661.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.662 Garden hoe levels
+
+`HerculesHoeLevel.java`, `HoeLevelHudWidget.java`, `HerculesConfig.java`, `HerculesFarming.java` and the sound cancellation call in `ClientPacketListenerMixin.java` port SkyHanni LGPL `features/garden/farming/HoeLevelDisplay.kt`, `features/garden/farming/MuteHoeLevelUp.kt`, `config/features/garden/HoeLevelsDisplayConfig.kt` and the levelable-item fields in `utils/SkyBlockItemModifierUtils.kt`.
+
+The display reads `levelable_lvl`, `levelable_exp` and tool UUID directly from held-item custom data. Its 49 normal XP thresholds and 200,000-XP overflow threshold exactly match the licensed Garden constant. It shows current/next level and current/required XP by default, with independent percentage, remaining, measured XP/minute, ETA, upgrade/overclock and wrong-crop rows. Rate uses smoothed positive same-tool XP deltas, rejects resets and implausible changes, and expires after configurable inactivity.
+
+Exact `OVERFLOW! Your ... has just dropped a Tool Exp Capsule!` messages increment only the held matching UUID in profile-qualified storage and optionally append the resulting level. `/hoelevel set` and `reset` provide deliberate recovery only for a valid UUID-bearing level-50 tool. Overflow visibility, every row, rate reset and precise sound muting are independently saved. The sound filter cancels only `PORTAL_TRAVEL` at pitch `1.4920635` while the feature is enabled in the Garden.
+
+Version `0.9.662` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; Minecraft's runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `9a872e49b242589b3473ea9fdde31ef045299cd035223de71ad26d38cef2aefa`.
+
+The old `0.9.661` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-002058-0.9.662/`; only `constellation-0.9.662.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

@@ -25,7 +25,32 @@ You do not need to test everything in one sitting. Start with the five-minute ch
 
 If all seven pass, the shared framework is healthy. Continue with whichever area you actually play.
 
-## Garden crop milestones: test this release first
+## Garden hoe levels: test this release first
+
+### Level and progress
+
+1. Enable Hercules and `Hoe Level Display`.
+2. Hold a specialized farming tool with `levelable_lvl` and `levelable_exp` data in the Garden.
+
+- [ ] Compare the displayed level and tool XP against the item. Expected: current/next level and XP threshold match.
+- [ ] Switch to an ordinary item. Expected: the Hoe Level HUD disappears immediately.
+- [ ] Leave the Garden while holding the tool. Expected: the display and sound filter stop.
+- [ ] Toggle level, progress, percentage, remaining, XP rate, ETA, upgrade and wrong-crop rows independently. Expected: only the chosen rows appear.
+- [ ] Gain tool XP. Expected: XP/min and ETA stabilize from actual item-data deltas, then return to Waiting after the configured inactivity reset.
+- [ ] Farm a crop that does not match the held specialized tool. Expected with Wrong Crop enabled: a red warning appears.
+
+### Upgrades, overflow and sound
+
+- [ ] Let XP exceed the current threshold before upgrading. Expected: Upgrade Required appears below level 40 and Overclock Required appears from level 40 onward.
+- [ ] Trigger a normal hoe level-up with sound muting enabled. Expected: only the exact portal-travel level-up sound is suppressed; unrelated portal sounds remain.
+- [ ] At level 50, trigger a Tool Exp Capsule overflow message. Expected: the message gains the resulting level and that profile/tool UUID gains one overflow level.
+- [ ] Switch profiles or tools. Expected: overflow values do not leak between profiles or UUIDs.
+- [ ] Disable overflow display. Expected: tracked overflow remains saved but is not added to the visible level.
+- [ ] Run `/hoelevel status`. Expected: it reports level, XP, overflow state and sound state.
+- [ ] On a level-50 tool, run `/hoelevel set 55`, then `/hoelevel reset`. Expected: the visible overflow level changes deliberately and then returns to its base.
+- [ ] Try setting overflow on a tool below level 50 or without a UUID. Expected: it is rejected without modifying another tool.
+
+## Garden crop milestones
 
 ### Initial synchronization
 

@@ -29,6 +29,7 @@ public class HerculesFarming extends BaseConstellation {
         HerculesMouseSensitivity.init(cfg);
         HerculesGardenCommands.init(cfg);
         HerculesCropMilestones.init(cfg);
+        HerculesHoeLevel.init(cfg);
         registerRenderer(HerculesPests::draw);
         registerRenderer(HerculesPestWaypoint::draw);
         registerRenderer(HerculesCropLocations::draw);
@@ -77,6 +78,9 @@ public class HerculesFarming extends BaseConstellation {
         hud.register(new com.froggylord.constellation.hud.CropMilestoneHudWidget(
             com.froggylord.constellation.hud.HudPosition.of(76, 114),
             () -> cfg.enabled && cfg.cropMilestoneProgress));
+        hud.register(new com.froggylord.constellation.hud.HoeLevelHudWidget(
+            com.froggylord.constellation.hud.HudPosition.of(76, 120),
+            () -> cfg.enabled && cfg.hoeLevelDisplay));
     }
 
     @Override
@@ -95,5 +99,6 @@ public class HerculesFarming extends BaseConstellation {
         HerculesMouseSensitivity.registerCommands(dispatcher);
         HerculesGardenCommands.registerCommands(dispatcher);
         HerculesCropMilestones.registerCommands(dispatcher);
+        HerculesHoeLevel.registerCommands(dispatcher);
     }
 }

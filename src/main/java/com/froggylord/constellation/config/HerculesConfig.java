@@ -346,6 +346,20 @@ public class HerculesConfig extends BaseConfigGroup {
     public Map<String, Long> cropMilestoneCounters = new HashMap<>();
     public Map<String, Integer> cropMilestoneGoals = new HashMap<>();
 
+    public boolean hoeLevelDisplay = true;
+    public boolean hoeLevelOverflow = true;
+    public boolean hoeLevelMuteSounds = true;
+    public boolean hoeLevelShowLevel = true;
+    public boolean hoeLevelShowProgress = true;
+    public boolean hoeLevelShowPercent = false;
+    public boolean hoeLevelShowRemaining = false;
+    public boolean hoeLevelShowRate = false;
+    public boolean hoeLevelShowEta = false;
+    public boolean hoeLevelShowUpgradeRequired = true;
+    public boolean hoeLevelWrongCropWarning = true;
+    public int hoeLevelRateResetSeconds = 5;
+    public Map<String, Integer> hoeOverflowLevels = new HashMap<>();
+
     public int speedWheat = 93, speedCarrot = 93, speedPotato = 93, speedNetherWart = 93;
     public int speedPumpkin = 155, speedMelon = 155, speedCocoa = 155, speedSugarCane = 328;
     public int speedCactus = 464, speedMushroom = 233, speedSunflower = 328, speedMoonflower = 328, speedWildRose = 328;

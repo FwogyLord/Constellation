@@ -92,7 +92,8 @@ public class ClientPacketListenerMixin {
         shift = At.Shift.AFTER), cancellable = true)
     private void constellation$onSound(ClientboundSoundPacket packet, CallbackInfo ci) {
         ConstellationClient.instance().packets().fire(packet);
-        if (com.froggylord.constellation.constellation.SlayerSounds.shouldCancel(packet)) ci.cancel();
+        if (com.froggylord.constellation.constellation.SlayerSounds.shouldCancel(packet)
+            || com.froggylord.constellation.constellation.HerculesHoeLevel.shouldCancel(packet)) ci.cancel();
     }
 
     // ported from SkyHanni (LGPL-2.1): features/dungeon/DungeonSecretTrackerLocator.kt (particle event input)

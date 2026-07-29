@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.662 (2026-07-30) — Garden hoe levels
+
+- added held-tool level and XP progress using the authoritative 49 normal thresholds plus the 200,000 XP overflow threshold
+- added profile/tool-specific overflow levels from Tool Exp Capsule messages with manual recovery and reset commands
+- added configurable percentage, remaining XP, measured XP rate, ETA, upgrade/overclock and wrong-crop rows
+- added exact Garden-only hoe level-up sound suppression without muting unrelated portal sounds
+
 ## 0.9.661 (2026-07-30) — Garden crop milestones
 
 - added profile-specific Crop Milestone counters using the authoritative 46-tier tables and exact Crop Milestones menu synchronization
