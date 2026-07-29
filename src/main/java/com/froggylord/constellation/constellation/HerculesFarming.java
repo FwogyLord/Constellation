@@ -26,6 +26,7 @@ public class HerculesFarming extends BaseConstellation {
         HerculesPlotMenu.init(cfg);
         HerculesPlotIcons.init(cfg);
         HerculesCropLocations.init(cfg);
+        HerculesToolkitCropIcons.init(cfg);
         HerculesMouseSensitivity.init(cfg);
         HerculesGardenCommands.init(cfg);
         HerculesCropMilestones.init(cfg);
@@ -134,6 +135,7 @@ public class HerculesFarming extends BaseConstellation {
         HerculesPlotMenu.registerCommands(dispatcher);
         HerculesPlotIcons.registerCommands(dispatcher);
         HerculesCropLocations.registerCommands(dispatcher);
+        HerculesToolkitCropIcons.registerCommands(dispatcher);
         HerculesMouseSensitivity.registerCommands(dispatcher);
         HerculesGardenCommands.registerCommands(dispatcher);
         HerculesCropMilestones.registerCommands(dispatcher);

@@ -109,6 +109,7 @@ This is the readable map of what Constellation currently contains. It is organiz
 - Target yaw/pitch, current angles and tolerance display
 - Recent/session blocks per second and crop-session statistics
 - Profile-specific Crop Milestone counters, exact menu synchronization, progress/ETA/rates, custom goals, close warnings and milestone-menu details
+- Farming Toolkit tool-to-crop icons for all 13 crops, with optional held-crop highlighting and compact labels
 - Specialized farming-tool level/XP display with overflow levels, XP rate/ETA, upgrade/overclock state, wrong-crop warning and precise sound muting
 - Minimum-swap DNA Analyzer solver with validated color boards, manual next-pair highlights, close protection and optional wrong-click safeguards
 - Profile-specific per-crop farming lanes with automatic two-layer detection, manual start/end placement, distance/time HUD, endpoint waypoints and switch warnings

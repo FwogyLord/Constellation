@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.675 (2026-07-30) — Farming Toolkit crop icons
+
+- added crop icons for every farming-tool slot in the exact Farming Toolkit menu
+- added optional held-crop highlighting, compact crop labels and item-decoration rendering
+- kept the underlying tool, tooltip and every menu click unchanged
+- retained manual per-crop start placement through `/cropstart set <crop>`
+
 ## 0.9.674 (2026-07-30) — Garden plot prices
 
 - added complete Configure Plots material and total coin-value breakdowns

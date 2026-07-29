@@ -403,6 +403,15 @@ public class HerculesConfig extends BaseConfigGroup {
     public Map<String, String> cropStartLocations = new HashMap<>();
     public Map<String, String> cropLastFarmedLocations = new HashMap<>();
 
+    // ported from SkyHanni (LGPL-3.0-or-later): features/garden/farming/ToolkitCropReplacer.kt
+    public boolean toolkitCropIcons = true;
+    public boolean toolkitCropIconBackground = true;
+    public boolean toolkitCropIconDecorations = false;
+    public boolean toolkitCropIconHighlightHeld = true;
+    public boolean toolkitCropIconLabels = false;
+    public int toolkitCropIconHeldColor = 0xFF55FF55;
+    public int toolkitCropIconLabelColor = 0xFFFFFFFF;
+
     public boolean mouseSensitivityHelper = true;
     public boolean mouseSensitivityAutoEnable = false;
     public boolean mouseSensitivityHud = true;

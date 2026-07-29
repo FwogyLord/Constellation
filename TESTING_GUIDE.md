@@ -451,6 +451,16 @@ If all seven pass, the shared framework is healthy. Continue with whichever area
 
 - [ ] Toggle start/last boxes, start/last beams, line, labels, distance and wall visibility independently. Expected: only the selected primitive changes.
 - [ ] Change start/last colors, box size, beam height, render range and last-point activation distance through `/cropstart`. Expected: settings persist.
+
+### Farming Toolkit crop icons
+
+- [ ] Enable Hercules and run `/toolkiticons`. Expected: status reports Toolkit crop icons on.
+- [ ] Open the exact `Farming Toolkit` menu. Expected: farming tools in slots 10-16 and 20-24 render as their crops; unrelated items and player-inventory slots remain unchanged.
+- [ ] Hover every replaced icon. Expected: the original farming-tool name and lore remain available because the real slot item is not replaced.
+- [ ] Hold a crop-specific farming tool before opening the menu. Expected: the matching crop icon receives a green outline when held highlighting is enabled.
+- [ ] Run `/toolkiticons option labels on`. Expected: compact crop abbreviations appear, including distinct NW, SC, SF, MF and WR labels.
+- [ ] Test `/toolkiticons option background off`, `decorations on`, `highlight off` and `/toolkiticons color held FF55FFFF`. Expected: each presentation setting changes independently and persists.
+- [ ] Click, shift-click and close the menu normally. Expected: no click is blocked, rewritten or generated.
 - [ ] Restart and switch profiles. Expected: locations survive restart and remain separate per profile.
 - [ ] Disable per-profile storage. Expected: a separate global layout is selected without deleting profile layouts.
 - [ ] Run `clear`, `clearstart`, `clearlast`, `clearall` and `clearprofiles` deliberately. Expected: only the documented crop/scope is removed.

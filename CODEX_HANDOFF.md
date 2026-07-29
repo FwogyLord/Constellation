@@ -1721,3 +1721,17 @@ Cheapest-plot and affordable-plot highlights are independent; affordability take
 Version `0.9.674` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `07435c100d1b1f8d9f04416b5940fca8991bf41ca454cbec3bde91d5d2c1deed`.
 
 The old `0.9.673` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-020943-0.9.674/`; only `constellation-0.9.674.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.675 Farming Toolkit crop icons
+
+`HerculesToolkitCropIcons.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory slot-render chain in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/farming/ToolkitCropReplacer.kt`.
+
+The exact `Farming Toolkit` title and licensed slot ranges 10-16 and 20-24 gate every replacement. The existing SkyBlock item-ID parser identifies the actual crop-specific tool, including the day/night Sunflower and Moonflower split, then renders the matching vanilla crop for all thirteen current Garden crops. The original slot stack remains intact, so its custom name, lore, custom data and click behavior remain authoritative.
+
+An opaque slot background can hide the old tool model. Item decorations, compact crop labels and a held-crop outline are independently configurable, with saved held and label colors. `/toolkiticons` exposes status, toggle, every presentation option and both color targets. The feature does not block, rewrite or generate a menu click.
+
+Manual specific-crop start placement remains available through `/cropstart set <crop>` at the current Garden block. It is independent of the held tool and respects the existing profile-specific/global storage selection.
+
+Version `0.9.675` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and whitespace audits pass. Main-jar SHA-256: `dff9a170b7514a3ae9d3286d58fd584531d6fe92bf65aac2f20d54974e8addd6`.
+
+The old `0.9.674` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-021849-0.9.675/`; only `constellation-0.9.675.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
