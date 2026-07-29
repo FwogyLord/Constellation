@@ -47,6 +47,22 @@ public class HerculesConfig extends BaseConfigGroup {
         "HYPERCHARGE_GARDEN_CHIP", "DYE_WILD_STRAWBERRY", "VISITORS_GRATITUDE", "FARMING_CONTEST_DISPLAY",
         "ASTRONAUT_PERSONALITY", "FAST_FOOD_BARN_SKIN", "JELLY_GREENHOUSE_SKIN"
     ));
+    // ported from SkyHanni (LGPL-3.0-or-later): features/garden/inventory/LogBookStats.kt
+    public boolean visitorLogbookStats = true;
+    public boolean visitorLogbookPersistent = true;
+    public boolean visitorLogbookShowVisited = true;
+    public boolean visitorLogbookShowAccepted = true;
+    public boolean visitorLogbookShowDenied = true;
+    public boolean visitorLogbookShowAcceptanceRate = true;
+    public boolean visitorLogbookShowCurrentQueue = true;
+    public boolean visitorLogbookShowPages = true;
+    public boolean visitorLogbookShowTopVisitors = true;
+    public boolean visitorLogbookVisitorTooltips = true;
+    public boolean visitorLogbookSortDenied = false;
+    public int visitorLogbookTopRows = 5;
+    public int visitorLogbookPanelColor = 0xD0181824;
+    public Map<String, String> visitorLogbookEntries = new HashMap<>();
+    public Map<String, String> visitorLogbookPages = new HashMap<>();
 
     public boolean farmingControlHud = true;
     public boolean farmingShowCrop = true;

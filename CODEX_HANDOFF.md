@@ -1679,3 +1679,17 @@ The exact licensed fifteen-tier Extra Farming Fortune table contains 66 remainin
 Version `0.9.671` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `e0ad1effc267033b7cb41a6634b52f387cced0821c7151971a161388c566595f`.
 
 The old `0.9.670` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-014725-0.9.671/`; only `constellation-0.9.671.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.672 Visitor Logbook analytics
+
+`HerculesVisitorLogbook.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory render/tooltip chain in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/inventory/LogBookStats.kt`.
+
+The exact `Visitor's Logbook` title gates all work. Only items containing both licensed `Times Visited` and `Offers Accepted` lore are visitors. Each named visitor replaces its prior record instead of accumulating, so page revisits and updated counts cannot double count. Session state may remain transient or persist by SkyBlock profile. Profile changes atomically replace visitors, captured pages, completion knowledge and menu fingerprints.
+
+Navigation supports both Next and Previous Page target lore plus explicit `Page N of M` or `Page N / M`. A target page is never mistaken for a final page: total-page completion becomes authoritative only from an explicit total or after reaching a page with no Next Page item. Captured pages persist as a set. Menu fingerprinting and a 250-millisecond read throttle avoid repeated parsing and saves during rendering.
+
+The side panel independently shows total visits, accepts, denied visits, acceptance percentage, visitors currently waiting and captured-page completion. Denied totals subtract the live Garden tab queue whenever Hypixel exposes it. Optional top rows rank visitors by visits or denials. Each visitor tooltip adds accepted, denied and acceptance-rate detail. `/visitorlog` exposes current-profile reset, deliberate all-profile reset, ranking row count, session/persistent behavior and every presentation control. It never changes a menu item or click.
+
+Version `0.9.672` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `81fc4b49d73217b76070e09ae20f7532547dc7b8fd41795d57943c7937e55bbc`.
+
+The old `0.9.671` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-015517-0.9.672/`; only `constellation-0.9.672.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

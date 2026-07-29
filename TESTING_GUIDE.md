@@ -2,6 +2,28 @@
 
 You do not need to test everything in one sitting. Start with the five-minute check, then test one game-area session whenever you naturally play that area. Checkboxes are intentionally split into small groups.
 
+## Visitor Logbook analytics
+
+### Enable
+
+1. Enable Hercules and `Visitor Logbook Stats`.
+2. Open the exact `Visitor's Logbook` menu in the Garden.
+3. Keep Persistent enabled if totals should survive restarts and profile changes.
+
+### Test
+
+- [ ] Open the first Logbook page. Expected: a side panel shows visited, accepted, denied, acceptance rate, waiting visitors and captured pages.
+- [ ] Navigate through every page once. Expected: each page is captured without double-counting visitors; completion turns green only after the final page or an explicit total is proven.
+- [ ] Reopen an already captured page. Expected: unchanged values do not accumulate or create duplicate visitors.
+- [ ] Leave visitors waiting in the Garden queue. Expected: the total denied count subtracts the authoritative current queue where Hypixel exposes it.
+- [ ] Hover a real visitor entry. Expected: its tooltip adds accepted, denied and acceptance-rate values.
+- [ ] Run `/visitorlog option sortdenied on`. Expected: ranking switches from most visited to most denied.
+- [ ] Run `/visitorlog rows 3`. Expected: at most three visitor ranking rows appear while summary rows remain.
+- [ ] Disable Visited, Accepted, Denied, Rate, Queue, Pages, Top and Tooltips independently. Expected: only the selected presentation changes.
+- [ ] Disable Persistent, run `/visitorlog reset`, and revisit one page. Expected: only the current session is retained.
+- [ ] Switch profiles. Expected: captured visitors and pages restore only for the active profile.
+- [ ] Run `/visitorlog reset`. Expected: only the current profile is cleared. Use `resetall` only to deliberately clear every saved profile.
+
 ## Anita medal shop
 
 ### Enable

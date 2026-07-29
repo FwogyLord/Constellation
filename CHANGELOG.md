@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.672 (2026-07-30) — Visitor Logbook analytics
+
+- added profile-safe multi-page Visitor's Logbook capture and restoration
+- added visited, accepted, denied, acceptance-rate, current-queue and page-completion totals
+- added configurable most-visited or most-denied visitor rankings and per-visitor summary tooltips
+- added fail-safe page-total discovery, session-only mode, row controls and current-profile or all-profile recovery
+
 ## 0.9.671 (2026-07-30) — Anita medal shop
 
 - added live Anita offer ranking by profit per Bronze-equivalent medal
