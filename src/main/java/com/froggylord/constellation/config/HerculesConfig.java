@@ -360,6 +360,19 @@ public class HerculesConfig extends BaseConfigGroup {
     public int hoeLevelRateResetSeconds = 5;
     public Map<String, Integer> hoeOverflowLevels = new HashMap<>();
 
+    public boolean dnaAnalyzerSolver = true;
+    public boolean dnaAnalyzerBlockClose = true;
+    public boolean dnaAnalyzerBlockWrongClicks = false;
+    public boolean dnaAnalyzerWrongClickFeedback = true;
+    public boolean dnaAnalyzerHideTooltips = true;
+    public boolean dnaAnalyzerDarkenOthers = true;
+    public boolean dnaAnalyzerShowOrder = true;
+    public boolean dnaAnalyzerHud = true;
+    public boolean dnaAnalyzerAllowEndColumns = true;
+    public int dnaAnalyzerFirstColor = 0xB055FF55;
+    public int dnaAnalyzerSecondColor = 0xB055FFFF;
+    public int dnaAnalyzerOtherColor = 0x70000000;
+
     public int speedWheat = 93, speedCarrot = 93, speedPotato = 93, speedNetherWart = 93;
     public int speedPumpkin = 155, speedMelon = 155, speedCocoa = 155, speedSugarCane = 328;
     public int speedCactus = 464, speedMushroom = 233, speedSunflower = 328, speedMoonflower = 328, speedWildRose = 328;

@@ -25,6 +25,7 @@ public abstract class ItemProtectionScreenMixin {
         cancellable = true)
     private void constellation$protectItemClick(Slot slot, int slotId, int button, ContainerInput input, CallbackInfo ci) {
         AbstractContainerScreen<?> screen = (AbstractContainerScreen<?>) (Object) this;
+        if (com.froggylord.constellation.constellation.HerculesDnaAnalyzer.shouldBlockClick(screen, slot, slotId, button, input)) { ci.cancel(); return; }
         if (com.froggylord.constellation.constellation.HerculesPlotIcons.shouldBlockClick(screen, slot, slotId, button, input)) { ci.cancel(); return; }
         if (com.froggylord.constellation.constellation.HerculesVisitorHelper.shouldBlockClick(screen, slot, slotId, input)) { ci.cancel(); return; }
         if (com.froggylord.constellation.constellation.LyraAuctionHelper.shouldBlockClick(screen, slot, slotId)) { ci.cancel(); return; }
@@ -49,6 +50,7 @@ public abstract class ItemProtectionScreenMixin {
         com.froggylord.constellation.constellation.HerculesPlotIcons.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesPlotMenu.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesCropMilestones.drawSlot(graphics, screen, slot);
+        com.froggylord.constellation.constellation.HerculesDnaAnalyzer.drawSlot(graphics, screen, slot);
         if (slot != null && ItemProtection.showMarker(slot.getItem()))
             graphics.text(net.minecraft.client.Minecraft.getInstance().font, "P", slot.x + 1, slot.y + 1, 0xFF55FF55, true);
     }
@@ -56,13 +58,14 @@ public abstract class ItemProtectionScreenMixin {
     @Inject(method = "getTooltipFromContainerItem", at = @At("RETURN"), cancellable = true)
     private void constellation$protectedTooltip(ItemStack stack, CallbackInfoReturnable<List<Component>> cir) {
         AbstractContainerScreen<?> screen = (AbstractContainerScreen<?>) (Object) this;
-        cir.setReturnValue(com.froggylord.constellation.constellation.HerculesCropMilestones.appendTooltip(screen, stack,
+        cir.setReturnValue(com.froggylord.constellation.constellation.HerculesDnaAnalyzer.appendTooltip(screen,
+            com.froggylord.constellation.constellation.HerculesCropMilestones.appendTooltip(screen, stack,
             com.froggylord.constellation.constellation.HerculesPlotIcons.appendTooltip(screen,
             com.froggylord.constellation.constellation.HerculesPlotMenu.appendTooltip(screen,
             DungeonLootHelper.appendTooltip(screen, stack,
             com.froggylord.constellation.constellation.HerculesVisitorHelper.appendTooltip(screen, stack,
                 com.froggylord.constellation.constellation.LyraAuctionHelper.appendTooltip(screen, stack,
                     com.froggylord.constellation.constellation.LyraBazaarHelper.appendTooltip(screen, stack,
-                        ItemProtection.appendTooltip(stack, cir.getReturnValue())))))))));
+                        ItemProtection.appendTooltip(stack, cir.getReturnValue()))))))))));
     }
 }

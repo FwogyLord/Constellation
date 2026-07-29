@@ -1,6 +1,6 @@
 # Codex handoff: Constellation dungeon feature work
 
-Last updated: 2026-07-30 for version 0.9.662 Garden hoe levels.
+Last updated: 2026-07-30 for version 0.9.663 Garden DNA Analyzer.
 
 This file is the durable continuation prompt for a new coding chat. Read it completely, then read `.forge/build-principles.md` before changing anything. Keep this file updated in every feature run, before the final build and deployment.
 
@@ -10,7 +10,7 @@ This file is the durable continuation prompt for a new coding chat. Read it comp
 - Minecraft 26.2 Fabric client for Hypixel SkyBlock.
 - Java package: `com.froggylord.constellation`
 - License: GPL-3.0-only.
-- Current artifact version: `0.9.662`.
+- Current artifact version: `0.9.663`.
 - Main objective: build the useful main SkyBlock features in depth from the user's live `Froggy__Lord Skyblock 26.1.2` Prism settings and licensed local references. Dungeon selection is now broad enough; prioritize Kuudra, slayers, general inventory/UI, Garden, mining, Rift, fishing/hunting, Diana/events, and Crimson Isle based on actual enabled settings.
 - Work in one small feature run at a time. Research, port, build, boot, audit, update this document, and deploy each feature independently.
 - The user repeatedly says `keep building`; continue the queue without requesting phase approval.
@@ -1555,3 +1555,17 @@ Exact `OVERFLOW! Your ... has just dropped a Tool Exp Capsule!` messages increme
 Version `0.9.662` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; Minecraft's runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `9a872e49b242589b3473ea9fdde31ef045299cd035223de71ad26d38cef2aefa`.
 
 The old `0.9.661` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-002058-0.9.662/`; only `constellation-0.9.662.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.663 Garden DNA Analyzer
+
+`HerculesDnaAnalyzer.java`, `HerculesConfig.java`, `HerculesFarming.java` and the existing advisory slot/click/tooltip calls in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/greenhouse/DnaAnalyzerSolver.kt` and `config/features/garden/DnaAnalyzerSolverConfig.kt`.
+
+The solver reads the exact 9-by-4 slot region, resolves DNA colors from component text colors and refuses every incomplete, uncolored, duplicate-color or unrelated board. It evaluates all 24 row permutations per mutable column, precomputes minimum cycle swaps, then uses dynamic programming plus parent reconstruction to find a globally minimum swap sequence whose adjacent colors connect within one row. The current licensed Garden constant allows first/last-column swaps; a saved option can model the fixed-end rule if that changes.
+
+Only the next manual pair is highlighted, using independent colors and optional 1/2 labels. Other board slots can be darkened and a movable HUD shows the remaining minimum swaps or solved state. Tooltips can hide only over DNA board slots. The close button can be blocked, and optional non-solution click blocking fails open unless a fully validated solution exists. Every option, overlay color and feedback behavior is saved and `/dnasolver` exposes state and main toggles.
+
+The licensed source's middle-click conversion was deliberately not ported because the standing puzzle rule requires advisory interaction. This implementation never changes click type, synthesizes a click or sends a solver packet. All swaps remain the player's explicit clicks.
+
+Version `0.9.663` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; Minecraft's runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `0119ab4b081cc0fbc3481ac3fb404f63ba093d52fcb1f44871a04651a9128d2a`.
+
+The old `0.9.662` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-002826-0.9.663/`; only `constellation-0.9.663.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

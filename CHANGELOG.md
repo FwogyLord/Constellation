@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.663 (2026-07-30) — Garden DNA Analyzer
+
+- added the exact minimum-swap DNA Analyzer solver across every 24-row permutation and the current end-column rule
+- added distinct next-pair highlights, numbered swap order, remaining-swap HUD, configurable colors and optional board darkening
+- added fail-closed four-color board validation, menu lifecycle reset, tooltip hiding and optional wrong-click feedback/blocking
+- added accidental close-button protection while keeping every solution interaction manual and advisory
+
 ## 0.9.662 (2026-07-30) — Garden hoe levels
 
 - added held-tool level and XP progress using the authoritative 49 normal thresholds plus the 200,000 XP overflow threshold

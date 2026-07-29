@@ -25,7 +25,32 @@ You do not need to test everything in one sitting. Start with the five-minute ch
 
 If all seven pass, the shared framework is healthy. Continue with whichever area you actually play.
 
-## Garden hoe levels: test this release first
+## Garden DNA Analyzer: test this release first
+
+### Board recognition and solution
+
+1. Enable Hercules and `DNA Analyzer Solver`.
+2. Open any Garden DNA Analyzer board.
+
+- [ ] Wait for all 36 colored DNA slots to load. Expected: the next two manually clickable slots receive distinct green/cyan highlights labelled 1 and 2.
+- [ ] Compare every column. Expected: the solver activates only when each column contains red, green, blue and yellow exactly once.
+- [ ] Click the two highlighted slots manually. Expected: the board update is rescanned and a new minimum-swap pair is highlighted.
+- [ ] Continue until complete. Expected: the HUD counts remaining swaps down and shows Solved when no swap remains.
+- [ ] Close and reopen the board. Expected: all previous board state resets and the new board is solved independently.
+- [ ] Open an unrelated inventory whose title does not end in ` DNA`. Expected: no highlights, tooltip changes, click blocking or HUD.
+
+### Configuration and safeguards
+
+- [ ] Toggle numbered order, board darkening, HUD and hidden tooltips separately. Expected: each visual behavior changes independently.
+- [ ] Change first, second and non-selected ARGB colors. Expected: only the corresponding overlay color changes.
+- [ ] Disable end-column swaps. Expected: the solver treats the first and last columns as fixed; restore it afterward because the current live rule allows end swaps.
+- [ ] Click slot 49 with close protection enabled. Expected: the accidental close action is blocked with local feedback.
+- [ ] Enable wrong-click blocking and click a non-highlighted DNA slot. Expected: the click is swallowed and optional feedback explains why.
+- [ ] Disable wrong-click blocking. Expected: all board clicks remain fully manual and pass through normally.
+- [ ] Run `/dnasolver status` and `/dnasolver option <name> <on|off>`. Expected: state is reported and supported options persist.
+- [ ] Verify ordinary left-clicks are still ordinary clicks. Expected: Constellation never rewrites them to middle click and never sends a solver click itself.
+
+## Garden hoe levels
 
 ### Level and progress
 
