@@ -25,7 +25,44 @@ You do not need to test everything in one sitting. Start with the five-minute ch
 
 If all seven pass, the shared framework is healthy. Continue with whichever area you actually play.
 
-## Garden commands: test this release first
+## Garden crop milestones: test this release first
+
+### Initial synchronization
+
+1. Enable Hercules and `Crop Milestone Progress`.
+2. Enter the Garden and run `/cropmilestone sync`.
+3. Keep the `Crop Milestones` menu open briefly.
+
+- [ ] Inspect all 13 crop items. Expected: their exact `Total` values are learned for the current profile.
+- [ ] Hold a crop-specific tool after closing the menu. Expected: the Crop Milestone HUD shows that crop, its current and target tiers, progress, ETA/rates when available, and no other crop.
+- [ ] Run `/cropmilestone status`. Expected: it reports the same crop, tier, counter and remaining amount.
+- [ ] Switch SkyBlock profiles and synchronize again. Expected: each profile retains independent counters and goals.
+
+### Live tracking and display
+
+- [ ] Farm with a Cultivating or counter-bearing tool. Expected: the saved milestone counter rises from actual tool-counter deltas and the measured crops/second stabilizes.
+- [ ] Farm Wheat. Expected: seed-inclusive Cultivating deltas are converted to Wheat milestone progress instead of overcounting.
+- [ ] Stop for the configured reset time. Expected: rate becomes zero and ETA says Waiting without losing progress.
+- [ ] Toggle tier, progress, percentage, ETA, crops/second, crops/minute, crops/hour and blocks/second rows. Expected: every row changes independently.
+- [ ] Change `Crop Milestone Row Order`. Expected: valid row names reorder the HUD without changing the underlying values.
+- [ ] Enable Show Without Tool, farm briefly, then change slots. Expected: the last actively farmed crop can remain visible; disabling it restores held-tool-only behavior.
+
+### Goals and warnings
+
+- [ ] Run `/cropmilestone goal wheat 46`. Expected: Wheat progress and ETA target the absolute cumulative Tier 46 requirement.
+- [ ] Enable Max Tier. Expected: crops without a higher custom goal target Tier 46 instead of only the next tier.
+- [ ] Run `/cropmilestone cleargoal wheat`. Expected: Wheat returns to the configured next/max-tier behavior.
+- [ ] Use `/cropmilestone set wheat <counter>` only as a recovery test, then reopen Crop Milestones. Expected: the menu restores the authoritative server total.
+- [ ] Enable close warning, title and sound with a deliberately reachable goal. Expected: one warning occurs inside the configured final seconds and does not repeat for the same target.
+
+### Crop Milestones menu
+
+- [ ] Reopen Crop Milestones with inventory tiers and average enabled. Expected: every recognized crop has a tier number and the menu shows the average across all 13 crops.
+- [ ] Toggle inventory overflow. Expected: displayed tiers cap at 46 when disabled and may exceed it when enabled.
+- [ ] Hover a crop item with total-progress tooltip enabled. Expected: progress percentage and exact current/required totals to Tier 46 appear before Rewards.
+- [ ] Leave the Garden. Expected: HUD, menu additions and tracking all stop immediately.
+
+## Garden commands
 
 ### Enable
 

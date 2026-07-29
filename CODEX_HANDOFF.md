@@ -1,6 +1,6 @@
 # Codex handoff: Constellation dungeon feature work
 
-Last updated: 2026-07-30 for version 0.9.660 Garden commands.
+Last updated: 2026-07-30 for version 0.9.661 Garden crop milestones.
 
 This file is the durable continuation prompt for a new coding chat. Read it completely, then read `.forge/build-principles.md` before changing anything. Keep this file updated in every feature run, before the final build and deployment.
 
@@ -10,7 +10,7 @@ This file is the durable continuation prompt for a new coding chat. Read it comp
 - Minecraft 26.2 Fabric client for Hypixel SkyBlock.
 - Java package: `com.froggylord.constellation`
 - License: GPL-3.0-only.
-- Current artifact version: `0.9.660`.
+- Current artifact version: `0.9.661`.
 - Main objective: build the useful main SkyBlock features in depth from the user's live `Froggy__Lord Skyblock 26.1.2` Prism settings and licensed local references. Dungeon selection is now broad enough; prioritize Kuudra, slayers, general inventory/UI, Garden, mining, Rift, fishing/hunting, Diana/events, and Crimson Isle based on actual enabled settings.
 - Work in one small feature run at a time. Research, port, build, boot, audit, update this document, and deploy each feature independently.
 - The user repeatedly says `keep building`; continue the queue without requesting phase approval.
@@ -1529,3 +1529,17 @@ Three normal Minecraft Controls bindings provide Garden Home, Garden Set Home an
 Version `0.9.660` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. The workstation's Gradle redirected stream again buffered before the markers, while `run/logs/latest.log` captured both at 23:59:41. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `5f15590c043d164daa8b2df2f8440199ad13b526ad854db949d80064d675f835`.
 
 The old `0.9.659` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-000228-0.9.660/`; only `constellation-0.9.660.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.661 Garden crop milestones
+
+`HerculesCropMilestones.java`, `CropMilestoneHudWidget.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory slot/tooltip calls in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `data/garden/cropmilestones/CropMilestonesApi.kt`, `features/garden/farming/GardenCropMilestoneDisplay.kt`, `features/garden/tracker/GardenCropBreakTracker.kt`, `features/garden/inventory/GardenCropMilestoneInventory.kt` and `config/features/garden/cropmilestones/CropMilestonesConfig.kt`.
+
+The exact six distinct 46-tier increment tables from the licensed Garden constant cover all 13 current crops, including Moonflower's distinct early tiers. Opening the exact `Crop Milestones` menu reads each crop and authoritative `Total` lore into profile-qualified persistence. Held Cultivating, levelable-exp and legacy hoe counters then contribute actual deltas; Wheat applies the reference's 0.4 seed correction. Tool UUIDs prevent cross-tool deltas, invalid/negative/implausibly large changes fail closed, rates smooth from observed increments and saves coalesce to five seconds with disconnect flush.
+
+The movable HUD can independently show crop/tier, current/required count, percentage, ETA, crops per second/minute/hour and blocks per second in a configurable order. It targets the next tier, Tier 46 or a higher per-crop custom goal. `/cropmilestone` provides status, deliberate menu synchronization, manual counter recovery, goal assignment/removal and main toggle controls. Close warnings have independent title/sound channels and fire once per target.
+
+The Crop Milestones menu can show per-crop tier numbers, a 13-crop average, capped or overflow tiers, and exact cumulative Tier 46 progress in crop tooltips. All additions are read-only overlays. Tracking, parsing and rendering are Garden-gated; no slot click or gameplay packet is generated except the deliberate `/cropmilestone sync` command.
+
+Version `0.9.661` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; Minecraft's runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. The only error was the established benign 401 user-property lookup for the offline headless account. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `0c62c3978f9a520f737fbb5d2ec549a7a2121e190616e44c41efbfcba4843169`.
+
+The old `0.9.660` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-001330-0.9.661/`; only `constellation-0.9.661.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

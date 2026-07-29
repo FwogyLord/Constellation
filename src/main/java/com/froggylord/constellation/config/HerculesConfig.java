@@ -321,6 +321,31 @@ public class HerculesConfig extends BaseConfigGroup {
     public boolean gardenCommandHotkeyFeedback = false;
     public int gardenCommandHotkeyCooldownMillis = 500;
 
+    public boolean cropMilestoneProgress = true;
+    public boolean cropMilestoneShowWithoutTool = false;
+    public boolean cropMilestoneShowMaxTier = false;
+    public boolean cropMilestoneWarnClose = false;
+    public boolean cropMilestoneWarningTitle = true;
+    public boolean cropMilestoneWarningSound = true;
+    public boolean cropMilestoneShowTier = true;
+    public boolean cropMilestoneShowProgress = true;
+    public boolean cropMilestoneShowPercent = false;
+    public boolean cropMilestoneShowTime = true;
+    public boolean cropMilestoneShowCropsSecond = false;
+    public boolean cropMilestoneShowCropsMinute = true;
+    public boolean cropMilestoneShowCropsHour = false;
+    public boolean cropMilestoneShowBlocksSecond = true;
+    public boolean cropMilestoneInventoryTiers = true;
+    public boolean cropMilestoneInventoryAverage = true;
+    public boolean cropMilestoneInventoryOverflow = false;
+    public boolean cropMilestoneTooltipTotalProgress = true;
+    public int cropMilestoneBpsPrecision = 2;
+    public int cropMilestoneBpsResetSeconds = 5;
+    public int cropMilestoneWarningSeconds = 5;
+    public String cropMilestoneRowOrder = "tier,progress,time,cropsminute,bps";
+    public Map<String, Long> cropMilestoneCounters = new HashMap<>();
+    public Map<String, Integer> cropMilestoneGoals = new HashMap<>();
+
     public int speedWheat = 93, speedCarrot = 93, speedPotato = 93, speedNetherWart = 93;
     public int speedPumpkin = 155, speedMelon = 155, speedCocoa = 155, speedSugarCane = 328;
     public int speedCactus = 464, speedMushroom = 233, speedSunflower = 328, speedMoonflower = 328, speedWildRose = 328;

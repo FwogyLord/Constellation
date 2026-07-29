@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.661 (2026-07-30) — Garden crop milestones
+
+- added profile-specific Crop Milestone counters using the authoritative 46-tier tables and exact Crop Milestones menu synchronization
+- added Cultivating/hoe-counter delta tracking, measured crop rates, configurable progress/percentage/rate rows and ETA to the next, maximum or custom tier
+- added optional close warnings, per-crop custom goals, manual recovery commands and five-second coalesced persistence
+- added Crop Milestones menu tier numbers, average tier and progress-to-tier-46 tooltip details with overflow controls
+
 ## 0.9.660 (2026-07-30) — Garden commands
 
 - added Garden-only `/home`, `/barn` and `/tp <plot>` rewrites to the matching Hypixel Garden commands
