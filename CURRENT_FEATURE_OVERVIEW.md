@@ -236,6 +236,9 @@ This is the readable map of what Constellation currently contains. It is organiz
 - Protected shift-click swaps, bound-slot drop/move guards and optional matching hotbar keys
 - Global or area-specific binding profiles with automatic selection and clipboard sharing
 - Graphical slot-binding editor with per-binding colors, borders, lines and live binding previews
+- Profile-aware Century Cake buff timer with a movable active, warning, expired or unknown HUD
+- All 16 Century Cake effects recognized with a five-minute missing-cake eating helper
+- Configurable cake duration, warning threshold, chat/title/sound alerts, colors and display rules
 - Slot locking and item protection integration
 - Auto-save reminder
 - Sign calculator and input helpers

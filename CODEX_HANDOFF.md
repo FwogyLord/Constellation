@@ -1787,3 +1787,15 @@ The non-pausing editor previews all 27 main slots and nine hotbar slots. Left-cl
 Version `0.9.679` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `1af18ee74feead41a4f8cd8afca263ccd771c1066b644ad66245f6e4b500685b`.
 
 The old `0.9.678` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-025619-0.9.679/`; only `constellation-0.9.679.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.680 Century Cake timer
+
+`PhoenixCenturyCake.java`, `CenturyCakeHudWidget.java`, `PhoenixConfig.java` and `PhoenixQol.java` port Devonian GPL `features/misc/CenturyCakeTimer.kt`. The port keeps its exact Yum/Big Yum recognition, all 16 current cake effects, 48-hour renewal and five-minute missing-cake session. Stat symbols from the reference are deliberately normalized to plain ASCII names to comply with the project UI rule.
+
+Expiry is stored independently by the current SkyBlock profile. The HUD can show active, warning, expired or unknown state, can optionally show the profile, and respects the global HUD editor. Only-expired behavior defaults on to match the active Devonian setup. Advance and expiry chat, title and sound channels are independently configurable, as are duration, warning threshold, helper window, seconds and state colors. Crossing detection prevents an expiry alert from replaying for stale data every login.
+
+`/centurycake` reports status. `toggle`, `clear`, `reset`, `duration <hours>`, `warning <minutes>` and `option <name> <on|off>` provide recovery and controlled testing. The helper only observes Hypixel chat and produces local display/alerts; it never clicks a cake, sends chat or changes inventory.
+
+Version `0.9.680` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass.
+
+The old `0.9.679` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-030530-0.9.680/`; only `constellation-0.9.680.jar` is live and its SHA-256 is `fd87b68eefa0e6ca8f0f8bffe3a84a564f219a0d7874b55e9a77bd52f6ce6cf9`. Live Gather preferences were not rewritten.

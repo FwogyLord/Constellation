@@ -862,6 +862,14 @@ Enable Lyra and Phoenix protection/inventory features. Use inexpensive test item
 - [ ] Enable `slotBindingAllowHotbarKeys` and press the matching hotbar key over its exact bound inventory partner. Expected: that deliberate matching swap works; unrelated targets remain blocked.
 - [ ] Disable binding protection. Expected: normal inventory interactions work again while explicit shift-left swaps remain available.
 - [ ] Test borders, lines, hover-only mode, always/shift/never line modes, width, fixed/per-bind colors, preview, sound and feedback independently. Expected: each control affects only its documented behavior.
+- [ ] Enable Phoenix and `centuryCakeTimer`, then run `/centurycake reset`. Expected: `/centurycake` reports the selected profile and about 48 hours remaining.
+- [ ] Turn off `centuryCakeOnlyExpired` or use `/centurycake option expiredonly off`. Expected: the movable Century Cakes HUD shows the remaining duration; profile and seconds rows follow their options.
+- [ ] Run `/centurycake warning 1`, then `/centurycake duration 1` and `/centurycake reset`. Expected: settings persist without producing an immediate warning.
+- [ ] Eat or refresh Century Cakes normally. Expected: each matching Yum message resets the profile timer and reports the session count once; hovering the count lists the remaining cake effects in plain text.
+- [ ] Eat every distinct cake within the configured helper window. Expected: the final helper says all 16 cakes were eaten; after the window expires, the next cake begins a fresh set.
+- [ ] Switch SkyBlock profiles. Expected: each profile retains its own expiry and the HUD/status follows the active profile.
+- [ ] Use `/centurycake clear`. Expected: the current profile becomes Unknown without clearing any other profile.
+- [ ] Set a short manual duration and warning threshold for a live expiry test. Expected: configured warning chat/title/sound fires once when crossing the threshold and expiry chat/title/sound fires once at zero; already-expired data does not alert again on every login.
 - [ ] Hover Bazaar, auction and ordinary items. Expected: relevant prices appear without duplicated or impossible values.
 - [ ] Open storage/backpacks. Expected: previews and total value correspond to contained items.
 - [ ] Search inventory. Expected: matching items remain clear and unrelated items are dimmed as configured.

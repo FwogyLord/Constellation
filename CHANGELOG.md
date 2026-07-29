@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.680 (2026-07-30) — Century Cake timer
+
+- added profile-aware 48-hour Century Cake buff persistence and a movable HUD
+- added recognition for all 16 cake effects and a session helper listing every missing cake
+- added configurable advance and expiry alerts, colors, duration, warning threshold and display behavior
+- added `/centurycake` status, test, reset and complete option commands
+
 ## 0.9.679 (2026-07-30) — Inventory slot binding
 
 - added persistent multi-target bindings between hotbar and main-inventory slots

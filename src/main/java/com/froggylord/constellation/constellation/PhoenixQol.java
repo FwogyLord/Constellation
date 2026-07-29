@@ -4,6 +4,8 @@ import com.froggylord.constellation.ConstellationClient;
 import com.froggylord.constellation.config.PhoenixConfig;
 import com.froggylord.constellation.core.BaseConstellation;
 import com.froggylord.constellation.core.InitContext;
+import com.froggylord.constellation.hud.HudManager;
+import com.froggylord.constellation.hud.HudPosition;
 import com.froggylord.constellation.render.WorldRenderer;
 import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
@@ -22,12 +24,21 @@ public class PhoenixQol extends BaseConstellation {
     public void init(InitContext ctx) {
         PhoenixWardrobeKeybinds.init((PhoenixConfig) config);
         PhoenixSlotBinding.init((PhoenixConfig) config);
+        PhoenixCenturyCake.init((PhoenixConfig) config);
     }
 
     @Override
     public void registerCommands(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         PhoenixWardrobeKeybinds.registerCommands(dispatcher);
         PhoenixSlotBinding.registerCommands(dispatcher);
+        PhoenixCenturyCake.registerCommands(dispatcher);
+    }
+
+    @Override
+    public void registerHud(HudManager hud) {
+        PhoenixConfig cfg = (PhoenixConfig) config;
+        hud.register(new com.froggylord.constellation.hud.CenturyCakeHudWidget(
+            HudPosition.of(76, 26), () -> cfg.enabled && cfg.centuryCakeTimer && cfg.centuryCakeHud));
     }
 
     private static long lastSaveAt = 0;

@@ -73,6 +73,29 @@ public class PhoenixConfig extends BaseConfigGroup {
     public boolean viewmodelCustomize = false;
     public boolean nameTagShadows = true;
     public boolean disableNpcDialogue = true;
+    // ported from Devonian (GPL-3.0-only): features/misc/CenturyCakeTimer.kt
+    public boolean centuryCakeTimer = false;
+    public boolean centuryCakeHud = true;
+    public boolean centuryCakeOnlyExpired = true;
+    public boolean centuryCakeShowUnknown = true;
+    public boolean centuryCakeChatHelper = true;
+    public boolean centuryCakeWarning = true;
+    public boolean centuryCakeWarningChat = true;
+    public boolean centuryCakeWarningTitle = false;
+    public boolean centuryCakeWarningSound = true;
+    public boolean centuryCakeExpiredChat = true;
+    public boolean centuryCakeExpiredTitle = false;
+    public boolean centuryCakeExpiredSound = true;
+    public boolean centuryCakeShowSeconds = false;
+    public boolean centuryCakeShowProfile = false;
+    public int centuryCakeDurationHours = 48;
+    public int centuryCakeWarningMinutes = 60;
+    public int centuryCakeHelperWindowMinutes = 5;
+    public int centuryCakeActiveColor = 0xFF55FF55;
+    public int centuryCakeWarningColor = 0xFFFFFF55;
+    public int centuryCakeExpiredColor = 0xFFFF5555;
+    public int centuryCakeUnknownColor = 0xFFAAAAAA;
+    public java.util.Map<String, Long> centuryCakeExpiryByProfile = new java.util.LinkedHashMap<>();
 
     // ported from Devonian (GPL-3.0-only): features/misc/inventory/SlotBinding.kt
     public static class SlotBindingProfile {
