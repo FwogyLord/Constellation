@@ -1,6 +1,6 @@
 # Codex handoff: Constellation dungeon feature work
 
-Last updated: 2026-07-30 for version 0.9.663 Garden DNA Analyzer.
+Last updated: 2026-07-30 for version 0.9.664 Garden farming lanes.
 
 This file is the durable continuation prompt for a new coding chat. Read it completely, then read `.forge/build-principles.md` before changing anything. Keep this file updated in every feature run, before the final build and deployment.
 
@@ -10,7 +10,7 @@ This file is the durable continuation prompt for a new coding chat. Read it comp
 - Minecraft 26.2 Fabric client for Hypixel SkyBlock.
 - Java package: `com.froggylord.constellation`
 - License: GPL-3.0-only.
-- Current artifact version: `0.9.663`.
+- Current artifact version: `0.9.664`.
 - Main objective: build the useful main SkyBlock features in depth from the user's live `Froggy__Lord Skyblock 26.1.2` Prism settings and licensed local references. Dungeon selection is now broad enough; prioritize Kuudra, slayers, general inventory/UI, Garden, mining, Rift, fishing/hunting, Diana/events, and Crimson Isle based on actual enabled settings.
 - Work in one small feature run at a time. Research, port, build, boot, audit, update this document, and deploy each feature independently.
 - The user repeatedly says `keep building`; continue the queue without requesting phase approval.
@@ -1569,3 +1569,17 @@ The licensed source's middle-click conversion was deliberately not ported becaus
 Version `0.9.663` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; Minecraft's runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `0119ab4b081cc0fbc3481ac3fb404f63ba093d52fcb1f44871a04651a9128d2a`.
 
 The old `0.9.662` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-002826-0.9.663/`; only `constellation-0.9.663.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.664 Garden farming lanes
+
+`HerculesFarmingLanes.java`, `FarmingLaneHudWidget.java`, `HerculesGardenTracker.java`, `HerculesConfig.java` and `HerculesFarming.java` port SkyHanni LGPL `features/garden/farming/lane/FarmingLane.kt`, `FarmingLaneApi.kt`, `FarmingLaneCreator.kt` and `FarmingLaneFeatures.kt`.
+
+The feature stores profile-qualified lanes for each of the 13 crops, with Sunflower and Moonflower sharing automatically detected flower lanes. `/farmlane detect` learns an axis and bounds by observing a complete outward layer and the return movement. Manual layouts use either exact numeric `/farmlane set` bounds or the easier per-crop `/farmlane start` and `/farmlane end` workflow while standing at each endpoint.
+
+The dedicated movable HUD independently exposes crop, remaining distance, ETA/movement state and speed. Direction reversals select the opposite bound, speed uses a configurable stability window with fluctuation tolerance, and paused/slow/calculating states suppress false ETAs. Switch alerts independently support title, chat and repeating sound channels, configurable timing/pitch/repeat, and `{crop}`, `{distance}` and `{time}` variables.
+
+Optional endpoint boxes, beams and labels use configurable color, height and through-wall behavior. Detection endpoints remain visible while learning even when normal corner waypoints are off. Missing-lane reminders have per-crop ignores and repeat limits. All tracking/rendering is Garden-only and advisory; it never moves, turns, clicks or sends gameplay packets.
+
+Version `0.9.664` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Gradle's redirected stream buffered before the markers while `run/logs/latest.log` captured both at 00:35:31. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `29478b9317c3988ad5cce3e6518dc6c0cb8068f0ee6889cc59c88c55453adfa5`.
+
+The old `0.9.663` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-003815-0.9.664/`; only `constellation-0.9.664.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

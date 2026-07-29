@@ -25,7 +25,33 @@ You do not need to test everything in one sitting. Start with the five-minute ch
 
 If all seven pass, the shared framework is healthy. Continue with whichever area you actually play.
 
-## Garden DNA Analyzer: test this release first
+## Garden farming lanes: test this release first
+
+### Save a lane
+
+1. Enable Hercules and `Farming Lane Distance Display`.
+2. Hold the crop tool you want to configure in the Garden.
+3. Run `/farmlane detect`, then farm to the far end of one layer, turn around and travel at least two blocks back.
+
+- [ ] Expected: detection saves the dominant north/south or east/west axis for that crop and profile.
+- [ ] Run `/farmlane status`. Expected: it reports the crop, direction and two measured bounds.
+- [ ] For manual placement, stand at one end and run `/farmlane start <crop> <northsouth|eastwest>`, then stand at the other end and run `/farmlane end <crop>`. Expected: that specific crop receives the two new bounds.
+- [ ] Run `/farmlane set <crop> <direction> <min> <max>`. Expected: exact numeric bounds can also be assigned manually.
+- [ ] Configure a second crop. Expected: switching held tools selects each crop's own saved lane.
+
+### Guidance and controls
+
+- [ ] Farm within a saved lane. Expected: the movable Farming Lane HUD reports remaining distance and ETA toward the end you are approaching.
+- [ ] Pause, move very slowly, then resume normal speed. Expected: Paused, Too slow and Calculating replace ETA until speed stabilizes.
+- [ ] Approach the end within the configured warning time. Expected: enabled title/chat channels fire once and the sound repeats at its configured interval.
+- [ ] Use `{crop}`, `{distance}` and `{time}` in the message. Expected: each variable resolves to live lane data.
+- [ ] Enable corner waypoints. Expected: both bounds render at the player's current cross-axis position; disabling them removes all world markers.
+- [ ] Run `/farmlane ignore <crop>`. Expected: missing-lane reminders toggle only for that crop.
+- [ ] Run `/farmlane clear <crop>`. Expected: only that profile and crop's lane is removed.
+- [ ] Leave the Garden or disconnect. Expected: the HUD, notifications and world markers stop immediately, while saved lanes remain.
+- [ ] Verify movement and turns remain manual. Expected: the feature never changes movement, aiming, clicks or packets.
+
+## Garden DNA Analyzer
 
 ### Board recognition and solution
 

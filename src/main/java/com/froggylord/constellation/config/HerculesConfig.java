@@ -373,6 +373,34 @@ public class HerculesConfig extends BaseConfigGroup {
     public int dnaAnalyzerSecondColor = 0xB055FFFF;
     public int dnaAnalyzerOtherColor = 0x70000000;
 
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/laneswitch/FarmingLaneConfig.kt
+    public boolean farmingLaneDistanceDisplay = true;
+    public boolean farmingLaneNotification = true;
+    public boolean farmingLaneNotificationTitle = true;
+    public boolean farmingLaneNotificationChat = false;
+    public boolean farmingLaneNotificationSound = true;
+    public boolean farmingLaneCornerWaypoints = false;
+    public boolean farmingLaneCornerThroughWalls = false;
+    public boolean farmingLaneMissingWarning = true;
+    public boolean farmingLaneShowCrop = false;
+    public boolean farmingLaneShowDistance = true;
+    public boolean farmingLaneShowTime = true;
+    public boolean farmingLaneShowSpeed = false;
+    public int farmingLaneSecondsBefore = 5;
+    public int farmingLaneSoundPitchHundredths = 100;
+    public int farmingLaneSoundRepeatTicks = 20;
+    public int farmingLaneDistancePrecision = 1;
+    public int farmingLaneStableTicks = 6;
+    public int farmingLaneSlowSpeedHundredths = 100;
+    public int farmingLaneMissingRepeatSeconds = 30;
+    public int farmingLaneDetectionTurnDistance = 2;
+    public int farmingLaneCornerColor = 0xFFFFFF55;
+    public int farmingLaneDetectionColor = 0xFFFFFFFF;
+    public int farmingLaneCornerBeamHeight = 12;
+    public String farmingLaneMessage = "&eLane Switch incoming.";
+    public String farmingLaneIgnoredCrops = "";
+    public Map<String, String> farmingLanes = new HashMap<>();
+
     public int speedWheat = 93, speedCarrot = 93, speedPotato = 93, speedNetherWart = 93;
     public int speedPumpkin = 155, speedMelon = 155, speedCocoa = 155, speedSugarCane = 328;
     public int speedCactus = 464, speedMushroom = 233, speedSunflower = 328, speedMoonflower = 328, speedWildRose = 328;

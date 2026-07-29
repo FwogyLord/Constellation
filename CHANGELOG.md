@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.664 (2026-07-30) — Garden farming lanes
+
+- added profile-specific per-crop farming lanes with automatic two-layer detection and manual start/end placement
+- added live distance, travel-time, movement-state and optional speed/crop HUD rows with configurable precision
+- added configurable lane-switch title, chat and repeating sound warnings with message variables
+- added optional endpoint waypoints, missing-lane warnings, per-crop ignores and complete command controls
+
 ## 0.9.663 (2026-07-30) — Garden DNA Analyzer
 
 - added the exact minimum-swap DNA Analyzer solver across every 24-row permutation and the current end-column rule
