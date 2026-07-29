@@ -74,7 +74,6 @@ public final class HerculesCropMoney {
         List<Row> all=new ArrayList<>();
         boolean ready=true;
         for(var crop:HerculesGardenTracker.Crop.values()){
-            if(!cfg.cropMoneyIncludeRareCrops&&(crop==HerculesGardenTracker.Crop.SUNFLOWER||crop==HerculesGardenTracker.Crop.MOONFLOWER||crop==HerculesGardenTracker.Crop.WILD_ROSE))continue;
             Product product=PRODUCTS.get(crop);
             double bps=bps(crop,current,rates);
             Double fortune=HerculesFortune.latest(crop);
@@ -109,6 +108,14 @@ public final class HerculesCropMoney {
             instant+=seeds*(seedPrice==null?0:seedPrice[0]);
             offer+=seeds*(seedPrice==null?0:seedPrice[1]);
             npc+=seeds*160;
+        }
+        if(cfg.cropMoneyIncludeRareCrops){
+            double drops=HerculesRareCropTracker.dropsPerHour(crop,bps);
+            if(drops>0){
+                offer+=drops*HerculesRareCropTracker.priceForCrop(crop,true);
+                instant+=drops*HerculesRareCropTracker.priceForCrop(crop,false);
+                npc+=drops*PriceProvider.npcValue(HerculesRareCropTracker.special(crop));
+            }
         }
         double extras=cfg.cropMoneyIncludeBountiful?basePerHour*.2:0;
         if(cfg.cropMoneyIncludeMooshroom&&crop!=HerculesGardenTracker.Crop.MUSHROOM){

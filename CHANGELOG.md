@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.670 (2026-07-30) — Rare Crop Tracker
+
+- added profile and session tracking for all 21 current rare Garden crop drops
+- added a movable value, profit-rate, active-uptime and recent-drop HUD with configurable sorting and line limits
+- added optional exact-message hiding, AFK exclusion, Bazaar price modes and recovery/testing commands
+- corrected Crop Money's Rare Crops option to value farming-armor drops using the equipped armor tier and crop-specific chance
+
 ## 0.9.669 (2026-07-30) — Garden Level progression
 
 - added profile-specific Garden XP synchronization from the exact Desk and SkyBlock Menu items

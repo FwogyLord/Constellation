@@ -2,6 +2,27 @@
 
 You do not need to test everything in one sitting. Start with the five-minute check, then test one game-area session whenever you naturally play that area. Checkboxes are intentionally split into small groups.
 
+## Garden Rare Crop Tracker
+
+### Enable
+
+1. Enable Hercules and `Rare Crop Tracker`.
+2. Enter the Garden holding a recognized farming tool.
+3. Run `/rarecrops` to confirm the tracker is on and using the session or profile view you want.
+
+### Test
+
+- [ ] Receive any `RARE CROP!` or `VERY RARE CROP!` farming drop. Expected: its exact type and count appear once in the movable Rare Crops HUD.
+- [ ] Enable Hide Chat and receive another drop. Expected: only that exact rare-crop message is hidden; the HUD still increments.
+- [ ] Run `/rarecrops add burrowing_spores 2`. Expected: two local recovery/test entries are added without sending a server command.
+- [ ] Toggle Session off. Expected: the current profile's saved totals appear; changing SkyBlock profiles does not leak totals.
+- [ ] Stop harvesting for longer than the configured AFK delay. Expected: active uptime and profit/hour stop advancing until harvesting resumes.
+- [ ] Toggle Profit, Profit Per Hour, Uptime and Recent independently. Expected: only their HUD rows change.
+- [ ] Run `/rarecrops price purchase`, then `/rarecrops price sell`. Expected: value uses Bazaar purchase cost and sell return respectively.
+- [ ] Set `/rarecrops lines 2`. Expected: at most two drop-type rows show while summary rows remain.
+- [ ] In Crop Money, toggle Rare Crops while wearing zero, one, two, three and four eligible armor pieces. Expected: the relevant crop's hourly value changes only when at least two eligible pieces produce a nonzero drop chance; later armor tiers count for earlier drops.
+- [ ] Run `/rarecrops reset`. Expected: session totals clear but profile totals remain. Run `/rarecrops clear` only when you want to erase this profile's totals.
+
 ## Garden Level progression
 
 ### Enable

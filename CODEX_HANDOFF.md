@@ -1651,3 +1651,17 @@ Confirmed visitor Garden Experience chat increments the synchronized value once.
 Version `0.9.669` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. The narrator's missing flite library remains benign. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `61c483a5fb927a8aff96aa3eb2aafcfc0cd2420e4d61fb85c511bd3ce3bb5309`.
 
 The old `0.9.668` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-012651-0.9.669/`; only `constellation-0.9.669.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.670 Rare Crop Tracker
+
+`HerculesRareCropTracker.java`, `RareCropHudWidget.java`, `HerculesCropMoney.java`, `HerculesConfig.java` and `HerculesFarming.java` port SkyHanni LGPL `features/garden/tracker/RareCropTracker.kt`, `data/jsonobjects/repo/RareCropDropsJson.kt`, `config/features/garden/RareCropTrackerConfig.kt` and the repository `ArmorDrops.json` data.
+
+The Garden-scoped tracker recognizes all 21 current exact `RARE CROP!` and `VERY RARE CROP!` messages. It stores profile-qualified lifetime counts plus an independent session view, optionally hides only a confirmed drop message, and exposes manual recovery additions without sending a server command. Profile changes reset the session atomically. Bazaar purchase or sell pricing drives total profit; profit/hour uses active harvesting time and stops after the configurable AFK delay.
+
+The movable HUD supports amount- or value-sorted top rows, total value, value/hour, uptime and a short-lived recent-drop row. Visibility can require a recognized farming tool. `/rarecrops` provides status, session reset, current-profile clear, manual recovery, line/recent/AFK limits, price source and every main display control.
+
+Crop Money's Rare Crops toggle no longer removes Sunflower, Moonflower or Wild Rose. It now adds the licensed expected Cropie, Squash, Fermento or Helianthus armor-drop value for the selected crop, current BPS, equipped eligible armor-piece count and exact one-to-four-piece chance table. Armor uses a monotonic tier check, so every later set correctly inherits all earlier-set drop eligibility. NPC, Bazaar instant-sell and Bazaar sell-offer columns value the extra independently.
+
+Version `0.9.670` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `c43fa1dca9e22188cb4be9d4c4bb5c8be94973a57eae2e784edb37703eb8e480`.
+
+The old `0.9.669` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-013657-0.9.670/`; only `constellation-0.9.670.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

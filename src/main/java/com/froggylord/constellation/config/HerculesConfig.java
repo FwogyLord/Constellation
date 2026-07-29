@@ -109,6 +109,22 @@ public class HerculesConfig extends BaseConfigGroup {
     public int gardenLevelPrecision = 1;
     public Map<String, Long> gardenLevelExperience = new HashMap<>();
 
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/RareCropTrackerConfig.kt
+    public boolean rareCropTracker = true;
+    public boolean rareCropHideChat = false;
+    public boolean rareCropOnlyWithTool = true;
+    public boolean rareCropOnlySession = true;
+    public boolean rareCropShowUptime = true;
+    public boolean rareCropShowProfit = true;
+    public boolean rareCropShowProfitPerHour = true;
+    public boolean rareCropShowRecent = true;
+    public boolean rareCropSortByValue = false;
+    public int rareCropMaxLines = 5;
+    public int rareCropAfkSeconds = 60;
+    public int rareCropRecentSeconds = 10;
+    public String rareCropPriceSource = "PURCHASE";
+    public Map<String, Long> rareCropPersistentDrops = new HashMap<>();
+
     public boolean jacobContestHud = true;
     public boolean jacobShowCrop = true;
     public boolean jacobShowCollected = true;
