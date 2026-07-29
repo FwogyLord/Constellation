@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.681 (2026-07-30) — World Age display
+
+- added a movable server-authoritative world-day and Minecraft-clock HUD
+- added day, clock, day/night phase, next-transition, real-age and raw-tick rows
+- added 12/24-hour clocks, zero/one-based days, Hypixel scope and independent colors
+- added complete `/worldage` status, toggle and option commands
+
 ## 0.9.680 (2026-07-30) — Century Cake timer
 
 - added profile-aware 48-hour Century Cake buff persistence and a movable HUD

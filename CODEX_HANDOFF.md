@@ -1799,3 +1799,15 @@ Expiry is stored independently by the current SkyBlock profile. The HUD can show
 Version `0.9.680` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass.
 
 The old `0.9.679` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-030530-0.9.680/`; only `constellation-0.9.680.jar` is live and its SHA-256 is `fd87b68eefa0e6ca8f0f8bffe3a84a564f219a0d7874b55e9a77bd52f6ce6cf9`. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.681 World Age display
+
+`PhoenixWorldAge.java`, `WorldAgeHudWidget.java`, `PhoenixConfig.java` and `PhoenixQol.java` port Devonian GPL `features/misc/WorldAge.kt`. The active Froggy__Lord 26.1.2 Devonian profile explicitly has `worldAge` enabled, while Constellation previously had no equivalent.
+
+Minecraft 26.2 removed the old client `dayTime` accessor used by the reference. The port uses `ClientLevel.getOverworldClockTime()`, the new synchronized World Clock API, preserving the reference's server-authoritative `ticks / 24000` day calculation across dimensions. It does not derive time from client ticks or local wall time.
+
+The movable HUD can independently show zero- or one-based day, 12- or 24-hour Minecraft clock, Day/Sunset/Night/Sunrise phase, countdown to the next phase, real elapsed world age and raw clock ticks. Day, clock, day-phase and night-phase colors are configurable, and the display may be Hypixel-only or available in any loaded world. `/worldage` provides status, toggle and every boolean display option.
+
+Version `0.9.681` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, emoji, whitespace and user-facing-copy audits pass.
+
+The old `0.9.680` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-031225-0.9.681/`; only `constellation-0.9.681.jar` is live and its SHA-256 is `a0b1b386da653b99443c5fd74783fe7ef371f01f238a5f22ef8c462ea2671483`. Live Gather preferences were not rewritten.

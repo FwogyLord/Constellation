@@ -870,6 +870,13 @@ Enable Lyra and Phoenix protection/inventory features. Use inexpensive test item
 - [ ] Switch SkyBlock profiles. Expected: each profile retains its own expiry and the HUD/status follows the active profile.
 - [ ] Use `/centurycake clear`. Expected: the current profile becomes Unknown without clearing any other profile.
 - [ ] Set a short manual duration and warning threshold for a live expiry test. Expected: configured warning chat/title/sound fires once when crossing the threshold and expiry chat/title/sound fires once at zero; already-expired data does not alert again on every login.
+- [ ] Enable Phoenix and `worldAge`, then join Hypixel and run `/worldage`. Expected: status reports the same day, time and phase as the movable World Age HUD.
+- [ ] Observe the clock for at least one in-game minute. Expected: it advances from the synchronized server clock and does not restart when changing SkyBlock islands or dimensions.
+- [ ] Toggle day, clock, phase, transition, real-age and raw-tick rows independently with `/worldage option <name> <on|off>`. Expected: each row appears or disappears without changing the underlying world.
+- [ ] Toggle `twelvehour` and `onebased`. Expected: only clock/day presentation changes; phase and transition timing remain identical.
+- [ ] Set `hypixel` off and enter a single-player world. Expected: the same display follows that world's clock; when on, non-Hypixel worlds remain hidden.
+- [ ] Watch a phase boundary near tick 12000, 13000, 23000 or 24000. Expected: the countdown reaches zero, changes its target and the phase/color changes once.
+- [ ] Change the four World Age colors in Phoenix settings and move/resize it in `/cn hud`. Expected: settings and HUD placement persist after restart.
 - [ ] Hover Bazaar, auction and ordinary items. Expected: relevant prices appear without duplicated or impossible values.
 - [ ] Open storage/backpacks. Expected: previews and total value correspond to contained items.
 - [ ] Search inventory. Expected: matching items remain clear and unrelated items are dimmed as configured.

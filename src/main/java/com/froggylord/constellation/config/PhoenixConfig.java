@@ -96,6 +96,22 @@ public class PhoenixConfig extends BaseConfigGroup {
     public int centuryCakeExpiredColor = 0xFFFF5555;
     public int centuryCakeUnknownColor = 0xFFAAAAAA;
     public java.util.Map<String, Long> centuryCakeExpiryByProfile = new java.util.LinkedHashMap<>();
+    // ported from Devonian (GPL-3.0-only): features/misc/WorldAge.kt
+    public boolean worldAge = false;
+    public boolean worldAgeHud = true;
+    public boolean worldAgeHypixelOnly = true;
+    public boolean worldAgeShowDay = true;
+    public boolean worldAgeOneBased = false;
+    public boolean worldAgeShowClock = true;
+    public boolean worldAgeTwelveHourClock = false;
+    public boolean worldAgeShowPhase = true;
+    public boolean worldAgeShowTransition = true;
+    public boolean worldAgeShowRealAge = false;
+    public boolean worldAgeShowTicks = false;
+    public int worldAgeDayColor = 0xFFFFAA00;
+    public int worldAgeClockColor = 0xFF55FFFF;
+    public int worldAgeDayPhaseColor = 0xFFFFFF55;
+    public int worldAgeNightPhaseColor = 0xFF5555FF;
 
     // ported from Devonian (GPL-3.0-only): features/misc/inventory/SlotBinding.kt
     public static class SlotBindingProfile {

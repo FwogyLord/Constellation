@@ -239,6 +239,8 @@ This is the readable map of what Constellation currently contains. It is organiz
 - Profile-aware Century Cake buff timer with a movable active, warning, expired or unknown HUD
 - All 16 Century Cake effects recognized with a five-minute missing-cake eating helper
 - Configurable cake duration, warning threshold, chat/title/sound alerts, colors and display rules
+- Server-authoritative World Age HUD with day number, Minecraft time and day/night phase
+- Optional next-transition countdown, real elapsed age, raw ticks, 12-hour clock and independent colors
 - Slot locking and item protection integration
 - Auto-save reminder
 - Sign calculator and input helpers

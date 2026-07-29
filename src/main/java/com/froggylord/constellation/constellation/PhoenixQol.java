@@ -25,6 +25,7 @@ public class PhoenixQol extends BaseConstellation {
         PhoenixWardrobeKeybinds.init((PhoenixConfig) config);
         PhoenixSlotBinding.init((PhoenixConfig) config);
         PhoenixCenturyCake.init((PhoenixConfig) config);
+        PhoenixWorldAge.init((PhoenixConfig) config);
     }
 
     @Override
@@ -32,6 +33,7 @@ public class PhoenixQol extends BaseConstellation {
         PhoenixWardrobeKeybinds.registerCommands(dispatcher);
         PhoenixSlotBinding.registerCommands(dispatcher);
         PhoenixCenturyCake.registerCommands(dispatcher);
+        PhoenixWorldAge.registerCommands(dispatcher);
     }
 
     @Override
@@ -39,6 +41,8 @@ public class PhoenixQol extends BaseConstellation {
         PhoenixConfig cfg = (PhoenixConfig) config;
         hud.register(new com.froggylord.constellation.hud.CenturyCakeHudWidget(
             HudPosition.of(76, 26), () -> cfg.enabled && cfg.centuryCakeTimer && cfg.centuryCakeHud));
+        hud.register(new com.froggylord.constellation.hud.WorldAgeHudWidget(
+            HudPosition.of(2, 26), () -> cfg.enabled && cfg.worldAge && cfg.worldAgeHud));
     }
 
     private static long lastSaveAt = 0;
