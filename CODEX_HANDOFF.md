@@ -1811,3 +1811,15 @@ The movable HUD can independently show zero- or one-based day, 12- or 24-hour Mi
 Version `0.9.681` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, emoji, whitespace and user-facing-copy audits pass.
 
 The old `0.9.680` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-031225-0.9.681/`; only `constellation-0.9.681.jar` is live and its SHA-256 is `a0b1b386da653b99443c5fd74783fe7ef371f01f238a5f22ef8c462ea2671483`. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.682 Screenshot clipboard
+
+`PhoenixScreenshotClipboard.java`, `ScreenshotMixin.java`, `MainHeadlessMixin.java`, `PhoenixConfig.java`, `PhoenixQol.java` and `constellation.mixins.json` port Devonian GPL `features/misc/Misc.kt`, `api/ImageTransfer.kt`, `mixin/ScreenshotMixin.java` and `mixin/MainMixin.java`. The AWT bootstrap pattern is additionally credited to ScreenshotToClipboard MIT `common/mixin/AWTHackMixin.java`. The active Froggy__Lord 26.1.2 Devonian profile explicitly enables `autoCopyScreenshot`.
+
+The screenshot consumer is wrapped without cancelling or replacing Minecraft's normal screenshot write. Unlike the licensed reference, conversion from `NativeImage` to `BufferedImage` completes synchronously before the original consumer can close the native image; only the operating-system clipboard write uses a virtual background thread. This removes a native-image lifetime race while keeping rendering unblocked during clipboard access.
+
+The feature can retain the latest converted image for deliberate `/screenshotclipboard copylast` retry, forget it immediately, and retry a temporarily busy clipboard zero-to-ten times with configurable spacing. Successful copy feedback supports action bar, optional local chat and sound; failure feedback is independently configurable and reports only the exception type. macOS and genuinely headless environments fail closed while normal screenshots continue unchanged. Session status reports copy/failure counts and never reads or exposes existing clipboard content.
+
+Version `0.9.682` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124 under Xvfb with the AWT bootstrap and both screenshot mixins applied; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, emoji, whitespace and user-facing-copy audits pass.
+
+The old `0.9.681` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-031857-0.9.682/`; only `constellation-0.9.682.jar` is live and its SHA-256 is `c2821bf088081e48415644037b90f17cb1d3ea02284ff1e735341ce5a40f90f4`. Live Gather preferences were not rewritten.

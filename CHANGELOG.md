@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.682 (2026-07-30) — Screenshot clipboard
+
+- added automatic image clipboard copying whenever Minecraft saves a screenshot
+- added race-safe pixel capture, asynchronous clipboard writes and configurable busy-clipboard retries
+- added optional last-screenshot retention, manual retry, action-bar/chat feedback and success sound
+- added safe unsupported-platform handling and complete `/screenshotclipboard` commands
+
 ## 0.9.681 (2026-07-30) — World Age display
 
 - added a movable server-authoritative world-day and Minecraft-clock HUD

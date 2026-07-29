@@ -877,6 +877,15 @@ Enable Lyra and Phoenix protection/inventory features. Use inexpensive test item
 - [ ] Set `hypixel` off and enter a single-player world. Expected: the same display follows that world's clock; when on, non-Hypixel worlds remain hidden.
 - [ ] Watch a phase boundary near tick 12000, 13000, 23000 or 24000. Expected: the countdown reaches zero, changes its target and the phase/color changes once.
 - [ ] Change the four World Age colors in Phoenix settings and move/resize it in `/cn hud`. Expected: settings and HUD placement persist after restart.
+- [ ] Enable Phoenix and `autoCopyScreenshot`, then press Minecraft's screenshot key. Expected: the normal screenshot file and chat link still appear, followed by the configured local copy feedback.
+- [ ] Paste into an image-aware application. Expected: the clipboard contains the exact full-resolution screenshot with correct colors and orientation, not a filename or path.
+- [ ] Take several screenshots quickly while another application is reading the clipboard. Expected: Minecraft remains responsive and bounded retries handle transient clipboard contention without duplicate saved files.
+- [ ] Run `/screenshotclipboard`. Expected: status reports platform support plus session copy/failure counts without exposing clipboard contents.
+- [ ] With retention enabled, overwrite the clipboard and run `/screenshotclipboard copylast`. Expected: the most recently captured screenshot returns to the clipboard.
+- [ ] Run `/screenshotclipboard forget`, then `copylast`. Expected: it reports that no retained screenshot exists.
+- [ ] Disable retention and take another screenshot. Expected: automatic copying still works, but `copylast` has no image; re-enabling retention affects subsequent screenshots.
+- [ ] Toggle action-bar, chat, failure-chat and sound options independently. Expected: only the selected local feedback channels change; no server message is sent.
+- [ ] Disable automatic copying. Expected: Minecraft continues saving screenshots normally and existing screenshot chat links still work.
 - [ ] Hover Bazaar, auction and ordinary items. Expected: relevant prices appear without duplicated or impossible values.
 - [ ] Open storage/backpacks. Expected: previews and total value correspond to contained items.
 - [ ] Search inventory. Expected: matching items remain clear and unrelated items are dimmed as configured.

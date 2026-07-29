@@ -26,6 +26,7 @@ public class PhoenixQol extends BaseConstellation {
         PhoenixSlotBinding.init((PhoenixConfig) config);
         PhoenixCenturyCake.init((PhoenixConfig) config);
         PhoenixWorldAge.init((PhoenixConfig) config);
+        PhoenixScreenshotClipboard.init((PhoenixConfig) config);
     }
 
     @Override
@@ -34,6 +35,7 @@ public class PhoenixQol extends BaseConstellation {
         PhoenixSlotBinding.registerCommands(dispatcher);
         PhoenixCenturyCake.registerCommands(dispatcher);
         PhoenixWorldAge.registerCommands(dispatcher);
+        PhoenixScreenshotClipboard.registerCommands(dispatcher);
     }
 
     @Override

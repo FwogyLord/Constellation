@@ -20,11 +20,13 @@
         "ItemEntityRendererMixin",
         "PreventWeaponPlaceMixin",
         "MapDataAccessor",
+        "MainHeadlessMixin",
         "MouseSensitivityMixin",
         "PlayerTabOverlayAccessor",
         "QuickCloseDungeonChestMixin",
         "SpiritLeapScreenMixin",
         "SlayerDeathMixin",
+        "ScreenshotMixin",
         "SignEditScreenMixin",
         "TerminalClickBlockMixin",
         "WarpShortenerMixin"

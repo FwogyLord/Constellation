@@ -112,6 +112,15 @@ public class PhoenixConfig extends BaseConfigGroup {
     public int worldAgeClockColor = 0xFF55FFFF;
     public int worldAgeDayPhaseColor = 0xFFFFFF55;
     public int worldAgeNightPhaseColor = 0xFF5555FF;
+    // ported from Devonian (GPL-3.0-only): features/misc/Misc.kt, mixin/ScreenshotMixin.java
+    public boolean autoCopyScreenshot = false;
+    public boolean screenshotClipboardSuccessActionbar = true;
+    public boolean screenshotClipboardSuccessChat = false;
+    public boolean screenshotClipboardFailureChat = true;
+    public boolean screenshotClipboardSound = false;
+    public boolean screenshotClipboardKeepLast = true;
+    public int screenshotClipboardRetries = 3;
+    public int screenshotClipboardRetryDelayMillis = 75;
 
     // ported from Devonian (GPL-3.0-only): features/misc/inventory/SlotBinding.kt
     public static class SlotBindingProfile {

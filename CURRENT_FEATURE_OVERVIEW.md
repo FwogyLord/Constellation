@@ -241,6 +241,8 @@ This is the readable map of what Constellation currently contains. It is organiz
 - Configurable cake duration, warning threshold, chat/title/sound alerts, colors and display rules
 - Server-authoritative World Age HUD with day number, Minecraft time and day/night phase
 - Optional next-transition countdown, real elapsed age, raw ticks, 12-hour clock and independent colors
+- Automatic screenshot-to-image-clipboard copying while preserving Minecraft's normal saved file
+- Optional last-screenshot retention, manual clipboard retry, bounded busy-clipboard retries and feedback controls
 - Slot locking and item protection integration
 - Auto-save reminder
 - Sign calculator and input helpers
