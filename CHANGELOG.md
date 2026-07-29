@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.668 (2026-07-30) — Crop money per hour
+
+- added live per-crop hourly profit comparisons using learned BPS, true Farming Fortune and Bazaar/NPC prices
+- added sell-offer, instant-sell and NPC formats plus current-crop extension, compact display and top-row controls
+- added Bountiful, Mooshroom Cow, replenishing-crop, seed-merge and rare-flower calculations
+- added automatic profit sorting and persistent manually assigned positions for every individual crop
+
 ## 0.9.667 (2026-07-30) — Jacob contest history and planning
 
 - added profile-specific parsing and persistence for all five medal thresholds from the exact Your Contests menu

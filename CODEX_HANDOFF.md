@@ -1627,3 +1627,15 @@ Contest summaries count only authoritative locally attacked-and-confirmed crop h
 Version `0.9.667` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `6ca0e0d8a8caabf0a439c8b04e7c596037ebff1e8159c2c216cb793b98ef71bf`.
 
 The old `0.9.666` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-010554-0.9.667/`; only `constellation-0.9.667.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.668 crop money per hour
+
+`HerculesCropMoney.java`, `CropMoneyHudWidget.java`, `HerculesConfig.java` and `HerculesFarming.java` port SkyHanni LGPL `features/garden/farming/CropMoneyDisplay.kt`, `features/garden/farming/GardenCropSpeed.kt` and `config/features/garden/MoneyPerHourConfig.kt`.
+
+The Garden-only comparison saves the most recent authoritative locally-confirmed BPS for each crop and combines it with the latest true per-crop Farming Fortune. It prices the appropriate compacted crop through the live Bazaar cache and explicit NPC fallbacks. Replenish cost, Sugar Cane/Cactus double drops, merged Wheat seeds, Bountiful coins and level-scaled Mooshroom Cow mushrooms are calculated separately. New rare flowers are supported and can be excluded.
+
+The movable HUD supports sell-offer, instant-sell and NPC columns, compact names/prices, top-one-to-thirteen filtering and current-crop extension. Automatic order ranks the selected price source by profit. Manual order lets every crop retain a user-assigned position through `/cropmoney position <crop> <1-13>`; duplicate positions remain deterministic with profit as a tie-breaker. `/cropmoney` also controls custom BPS and all operational/display toggles. The feature only reads confirmed harvests, cached statistics and public prices; it sends no server command, click or gameplay packet.
+
+Version `0.9.668` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. The narrator's missing flite library remains benign. Source-credit, forbidden-source, symbol, whitespace and user-facing-copy audits pass. Main-jar SHA-256: `628dcdfd897082fb0eb477ea361f89eddcaf87dba033635f7a6eb68d5b722540`.
+
+The old `0.9.667` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-011547-0.9.668/`; only `constellation-0.9.668.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

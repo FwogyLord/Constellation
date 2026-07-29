@@ -92,6 +92,9 @@ This is the readable map of what Constellation currently contains. It is organiz
 
 ## Hercules: Garden and farming
 
+- Crop money-per-hour comparison using observed or custom BPS, saved true Fortune and live Bazaar/NPC values
+- Automatic profit ranking or persistent manual position assignment for each individual crop
+- Sell-offer, instant-sell and NPC columns with Bountiful, Mooshroom, seed, replenish and rare-crop controls
 - Visitor shopping list with inventory and sack quantities
 - Visitor item prices, total cost, copper value and reward profit
 - Rare/new visitor refusal safeguards and configurable loss safeguards

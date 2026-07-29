@@ -74,6 +74,28 @@ public class HerculesConfig extends BaseConfigGroup {
     public int farmingResetAfterSeconds = 5;
     public int farmingBpsPrecision = 2;
 
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/MoneyPerHourConfig.kt
+    public boolean cropMoneyDisplay = false;
+    public boolean cropMoneyAlwaysOn = false;
+    public boolean cropMoneyShowCurrent = true;
+    public boolean cropMoneyCompact = false;
+    public boolean cropMoneyCompactPrice = false;
+    public boolean cropMoneyMergeSeeds = true;
+    public boolean cropMoneyIncludeBountiful = true;
+    public boolean cropMoneyIncludeMooshroom = true;
+    public boolean cropMoneyIncludeRareCrops = true;
+    public boolean cropMoneyShowSellOffer = true;
+    public boolean cropMoneyShowInstantSell = false;
+    public boolean cropMoneyShowNpc = false;
+    public boolean cropMoneyUseCustomBps = false;
+    public boolean cropMoneyManualOrder = false;
+    public boolean cropMoneyHideTitle = false;
+    public int cropMoneyShowBest = 5;
+    public int cropMoneyCustomBpsHundredths = 2000;
+    public int cropMoneyMooshroomLevel = 100;
+    public Map<String, Double> cropMoneyLatestBps = new HashMap<>();
+    public Map<String, Integer> cropMoneyPositions = new HashMap<>();
+
     public boolean jacobContestHud = true;
     public boolean jacobShowCrop = true;
     public boolean jacobShowCollected = true;

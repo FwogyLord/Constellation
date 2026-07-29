@@ -2,6 +2,26 @@
 
 You do not need to test everything in one sitting. Start with the five-minute check, then test one game-area session whenever you naturally play that area. Checkboxes are intentionally split into small groups.
 
+## Garden crop money per hour
+
+### Enable
+
+1. Enable Hercules and `Crop Money Display`.
+2. Keep `Crop Money Use Custom Bps` off to learn each crop from farming, or enable it and set `/cropmoney bps 2000` for a 20.00 BPS comparison.
+3. Enable at least one of Sell Offer, Instant Sell or NPC.
+
+### Test
+
+- [ ] Farm one crop for at least five seconds. Expected: its observed BPS is saved and its row appears once true Farming Fortune has been seen for that crop.
+- [ ] Compare the current row with Bazaar prices. Expected: hourly profit changes after Bazaar refresh and the current crop is yellow.
+- [ ] Toggle Bountiful, Mooshroom, Merge Seeds and Rare Crops separately. Expected: only the relevant contribution or rows change.
+- [ ] Set the top count below the current crop's rank. Expected: Show Current adds that crop without hiding a higher-ranked crop.
+- [ ] Run `/cropmoney option manual on`, then `/cropmoney position melon 1` and `/cropmoney position wheat 2`. Expected: those crops hold the first two manual positions even when prices change.
+- [ ] Assign two crops the same position. Expected: both remain visible and use profit as the stable tie-breaker.
+- [ ] Run `/cropmoney resetpositions`. Expected: saved positions clear; automatic profit ordering resumes after `/cropmoney option manual off`.
+- [ ] Leave the Garden. Expected: the HUD hides immediately even when Always On is enabled.
+- [ ] Open `/cn hud` while the display was visible in the last five seconds and scroll it. Expected: the crop-money HUD can be moved and resized like other current HUD elements.
+
 ## Before testing
 
 1. Launch the `Constellation Gather 26.2` Prism instance.

@@ -35,6 +35,7 @@ public class HerculesFarming extends BaseConstellation {
         HerculesComposter.init(cfg);
         HerculesJacobUpcoming.init(cfg);
         HerculesJacobHistory.init(cfg);
+        HerculesCropMoney.init(cfg);
         registerRenderer(HerculesFarmingLanes::draw);
         registerRenderer(HerculesPests::draw);
         registerRenderer(HerculesPestWaypoint::draw);
@@ -103,6 +104,9 @@ public class HerculesFarming extends BaseConstellation {
         hud.register(new com.froggylord.constellation.hud.JacobPlannerHudWidget(
             com.froggylord.constellation.hud.HudPosition.of(50, 74),
             () -> cfg.enabled && cfg.jacobContestHistory && (cfg.jacobContestTimeNeeded || cfg.jacobContestFfNeeded)));
+        hud.register(new com.froggylord.constellation.hud.CropMoneyHudWidget(
+            com.froggylord.constellation.hud.HudPosition.of(50, 80),
+            () -> cfg.enabled && cfg.cropMoneyDisplay));
     }
 
     @Override
@@ -127,5 +131,6 @@ public class HerculesFarming extends BaseConstellation {
         HerculesComposter.registerCommands(dispatcher);
         HerculesJacobUpcoming.registerCommands(dispatcher);
         HerculesJacobHistory.registerCommands(dispatcher);
+        HerculesCropMoney.registerCommands(dispatcher);
     }
 }
