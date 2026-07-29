@@ -61,6 +61,7 @@ public abstract class ItemProtectionScreenMixin {
     private void constellation$protectedTooltip(ItemStack stack, CallbackInfoReturnable<List<Component>> cir) {
         AbstractContainerScreen<?> screen = (AbstractContainerScreen<?>) (Object) this;
         cir.setReturnValue(com.froggylord.constellation.constellation.HerculesComposter.appendTooltip(screen, stack,
+            com.froggylord.constellation.constellation.HerculesGardenLevel.appendTooltip(screen, stack,
             com.froggylord.constellation.constellation.HerculesDnaAnalyzer.appendTooltip(screen,
             com.froggylord.constellation.constellation.HerculesCropMilestones.appendTooltip(screen, stack,
             com.froggylord.constellation.constellation.HerculesPlotIcons.appendTooltip(screen,
@@ -69,6 +70,6 @@ public abstract class ItemProtectionScreenMixin {
             com.froggylord.constellation.constellation.HerculesVisitorHelper.appendTooltip(screen, stack,
                 com.froggylord.constellation.constellation.LyraAuctionHelper.appendTooltip(screen, stack,
                     com.froggylord.constellation.constellation.LyraBazaarHelper.appendTooltip(screen, stack,
-                        ItemProtection.appendTooltip(stack, cir.getReturnValue())))))))))));
+                        ItemProtection.appendTooltip(stack, cir.getReturnValue()))))))))))));
     }
 }

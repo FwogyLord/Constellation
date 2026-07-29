@@ -96,6 +96,19 @@ public class HerculesConfig extends BaseConfigGroup {
     public Map<String, Double> cropMoneyLatestBps = new HashMap<>();
     public Map<String, Integer> cropMoneyPositions = new HashMap<>();
 
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/GardenLevelConfig.kt
+    public boolean gardenLevelDisplay = false;
+    public boolean gardenLevelOverflow = true;
+    public boolean gardenLevelOverflowChat = true;
+    public boolean gardenLevelShowProgress = true;
+    public boolean gardenLevelShowPercentage = true;
+    public boolean gardenLevelShowTotalXp = false;
+    public boolean gardenLevelShowOverflowXp = true;
+    public boolean gardenLevelMenuTooltip = true;
+    public boolean gardenLevelUseRomanNumerals = false;
+    public int gardenLevelPrecision = 1;
+    public Map<String, Long> gardenLevelExperience = new HashMap<>();
+
     public boolean jacobContestHud = true;
     public boolean jacobShowCrop = true;
     public boolean jacobShowCollected = true;

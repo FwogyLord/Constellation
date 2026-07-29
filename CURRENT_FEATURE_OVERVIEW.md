@@ -92,6 +92,7 @@ This is the readable map of what Constellation currently contains. It is organiz
 
 ## Hercules: Garden and farming
 
+- Profile-specific Garden XP synchronization, level/overflow progress HUD, visitor XP updates and max-level menu details
 - Crop money-per-hour comparison using observed or custom BPS, saved true Fortune and live Bazaar/NPC values
 - Automatic profit ranking or persistent manual position assignment for each individual crop
 - Sell-offer, instant-sell and NPC columns with Bountiful, Mooshroom, seed, replenish and rare-crop controls

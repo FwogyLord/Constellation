@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.669 (2026-07-30) — Garden Level progression
+
+- added profile-specific Garden XP synchronization from the exact Desk and SkyBlock Menu items
+- added current level, level XP, percentage, total XP and level-15-plus overflow progression HUD rows
+- added visitor-reward XP updates, configurable overflow level-up chat and clickable Garden Levels access
+- added max-level menu tooltips, decimal/Roman display, recovery commands and complete presentation controls
+
 ## 0.9.668 (2026-07-30) — Crop money per hour
 
 - added live per-crop hourly profit comparisons using learned BPS, true Farming Fortune and Bazaar/NPC prices

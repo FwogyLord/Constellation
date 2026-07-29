@@ -2,6 +2,27 @@
 
 You do not need to test everything in one sitting. Start with the five-minute check, then test one game-area session whenever you naturally play that area. Checkboxes are intentionally split into small groups.
 
+## Garden Level progression
+
+### Enable
+
+1. Enable Hercules and `Garden Level Display`.
+2. Enter the Garden and open either the Desk or SkyBlock Menu once.
+3. Keep Overflow enabled to show levels above 15.
+
+### Test
+
+- [ ] Open the Desk and inspect its center Garden item. Expected: `/gardenlevel` reports the same level and total XP represented by its lore.
+- [ ] Open the SkyBlock Menu. Expected: slot 10 synchronizes the same profile without creating a second value.
+- [ ] At level 15 or higher, hover the Garden item. Expected: the tooltip adds current overflow XP, next-level progress and percentage without replacing Hypixel lore.
+- [ ] Accept a visitor that rewards Garden Experience. Expected: total and current-level XP increase once by the displayed reward.
+- [ ] Cross an overflow level boundary. Expected: optional local level-up chat appears once and its text can be clicked to run `/gardenlevels`.
+- [ ] Disable Overflow. Expected: level caps at 15 while earned XP remains saved and can optionally be shown as overflow.
+- [ ] Toggle Progress, Percentage, Total XP and Overflow XP independently. Expected: only the selected HUD rows remain.
+- [ ] Toggle Roman numerals and change `/gardenlevel precision 2`. Expected: level formatting and percentage precision update immediately.
+- [ ] Switch SkyBlock profiles and open the Desk. Expected: each profile restores only its own Garden XP.
+- [ ] Run `/gardenlevel clear`. Expected: only the current profile is forgotten and the display asks for a Desk sync.
+
 ## Garden crop money per hour
 
 ### Enable
