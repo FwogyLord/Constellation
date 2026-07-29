@@ -850,6 +850,18 @@ Enable Lyra and Phoenix protection/inventory features. Use inexpensive test item
 - [ ] Run `/wardrobekeys swap 1 2`, enable the swap option and bind Wardrobe Swap. Expected: the key selects slot 2 when slot 1 is equipped and otherwise selects slot 1.
 - [ ] Bind Wardrobe Open. Expected: it deliberately sends `/wardrobe` once when pressed on Hypixel and never opens anything automatically.
 - [ ] Toggle labels, label position, label color, sound, feedback and cooldown. Expected: each option persists and changes only its documented presentation or input behavior.
+- [ ] Enable Phoenix and `slotBinding`, open the player inventory and hold the Slot Binding control over a hotbar slot. Move to a main-inventory slot and release. Expected: the pair is saved with matching colored borders.
+- [ ] Bind several main-inventory slots to one hotbar slot. Shift-left-click each main slot. Expected: it swaps with the bound hotbar slot and becomes that hotbar slot's remembered target.
+- [ ] Shift-left-click the multi-bound hotbar slot. Expected: it swaps with the last used target, or the first configured target when none has been used.
+- [ ] Press and release the binding control over a bound slot. Expected: every binding on a hotbar slot, or the selected single inventory binding, is removed.
+- [ ] Run `/slotbind gui`. Expected: the editor shows all 27 inventory and nine hotbar slots; left-click selects, middle-click cycles a binding color and right-click unbinds.
+- [ ] In the editor, add, select and two-step-delete profiles. Expected: the last profile cannot be deleted and no profile disappears on a single accidental right click.
+- [ ] Run `/slotbind create garden current` while the Garden area is detected, then create/select a global profile. Expected: dynamic profiles select `garden` in the Garden and the global profile elsewhere.
+- [ ] Run `/slotbind export`, then `/slotbind import`. Expected: a validated copy appears under a collision-safe imported name; malformed or oversized clipboard content is rejected.
+- [ ] With protection enabled, try normal pickup, throw, collect-all, offhand and unrelated number-key swaps involving bound slots. Expected: the bound item does not move or drop.
+- [ ] Enable `slotBindingAllowHotbarKeys` and press the matching hotbar key over its exact bound inventory partner. Expected: that deliberate matching swap works; unrelated targets remain blocked.
+- [ ] Disable binding protection. Expected: normal inventory interactions work again while explicit shift-left swaps remain available.
+- [ ] Test borders, lines, hover-only mode, always/shift/never line modes, width, fixed/per-bind colors, preview, sound and feedback independently. Expected: each control affects only its documented behavior.
 - [ ] Hover Bazaar, auction and ordinary items. Expected: relevant prices appear without duplicated or impossible values.
 - [ ] Open storage/backpacks. Expected: previews and total value correspond to contained items.
 - [ ] Search inventory. Expected: matching items remain clear and unrelated items are dimmed as configured.

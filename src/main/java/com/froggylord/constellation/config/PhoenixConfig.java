@@ -50,10 +50,35 @@ public class PhoenixConfig extends BaseConfigGroup {
     public int wardrobeSwapSlotOne = 1;
     public int wardrobeSwapSlotTwo = 2;
     public int wardrobeLabelColor = 0xFF55AAFF;
+    // ported from Devonian (GPL-3.0-only): features/misc/inventory/SlotBinding.kt
+    public boolean slotBinding = false;
+    public boolean slotBindingProtect = true;
+    public boolean slotBindingDynamicProfiles = true;
+    public boolean slotBindingBorders = true;
+    public boolean slotBindingLines = true;
+    public boolean slotBindingHoverOnly = false;
+    public boolean slotBindingShowWhileBinding = true;
+    public boolean slotBindingSound = true;
+    public boolean slotBindingFeedback = true;
+    public boolean slotBindingAllowHotbarKeys = false;
+    public int slotBindingLineMode = 2;
+    public int slotBindingLineWidth = 1;
+    public int slotBindingFixedColor = 0xFF55FFAA;
+    public boolean slotBindingUseFixedColor = false;
+    public String slotBindingSelectedProfile = "default";
+    public java.util.Map<String, SlotBindingProfile> slotBindingProfiles = new java.util.LinkedHashMap<>();
     public boolean autoSaveReminder = true;
     public boolean hotbarLock = false;
     public boolean hotbarSwapHelper = false;
     public boolean viewmodelCustomize = false;
     public boolean nameTagShadows = true;
     public boolean disableNpcDialogue = true;
+
+    // ported from Devonian (GPL-3.0-only): features/misc/inventory/SlotBinding.kt
+    public static class SlotBindingProfile {
+        public String area = "";
+        public java.util.Map<Integer, java.util.List<Integer>> binds = new java.util.LinkedHashMap<>();
+        public java.util.Map<Integer, Integer> last = new java.util.LinkedHashMap<>();
+        public java.util.Map<Integer, Integer> colors = new java.util.LinkedHashMap<>();
+    }
 }

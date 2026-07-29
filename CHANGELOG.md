@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.679 (2026-07-30) — Inventory slot binding
+
+- added persistent multi-target bindings between hotbar and main-inventory slots
+- added protected shift-click swaps, remembered hotbar targets and indirect movement/drop safeguards
+- added global and area-specific profiles with automatic switching, import/export and profile commands
+- added a graphical profile editor, colored borders, configurable connection lines and binding previews
+
 ## 0.9.678 (2026-07-30) — Wardrobe keybinds
 
 - added hotbar, number-row and individually configurable wardrobe slot keys

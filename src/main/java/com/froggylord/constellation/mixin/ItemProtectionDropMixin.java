@@ -13,6 +13,9 @@ public class ItemProtectionDropMixin {
     @Inject(method = "drop(Z)Z", at = @At("HEAD"), cancellable = true)
     private void constellation$protectDrop(boolean entireStack, CallbackInfoReturnable<Boolean> cir) {
         LocalPlayer player = (LocalPlayer) (Object) this;
+        // ported from Athen (BSD-3-Clause): modules/impl/general/slotbinds/SlotBinds.kt
+        if (com.froggylord.constellation.constellation.PhoenixSlotBinding.shouldBlockDrop(
+            player.getInventory().getSelectedSlot())) { cir.setReturnValue(false); return; }
         if (ItemProtection.shouldBlockDrop(player.getMainHandItem())) cir.setReturnValue(false);
     }
 }

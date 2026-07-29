@@ -232,6 +232,10 @@ This is the readable map of what Constellation currently contains. It is organiz
 - Armor and equipment wardrobe keys with hotbar, number-row or custom slot mapping
 - Wardrobe page, open, unequip and two-slot swap keys
 - Wardrobe slot labels, equipped-set protection, cooldown, sound and invalid-key controls
+- Multi-target hotbar-to-inventory slot bindings with remembered targets
+- Protected shift-click swaps, bound-slot drop/move guards and optional matching hotbar keys
+- Global or area-specific binding profiles with automatic selection and clipboard sharing
+- Graphical slot-binding editor with per-binding colors, borders, lines and live binding previews
 - Slot locking and item protection integration
 - Auto-save reminder
 - Sign calculator and input helpers

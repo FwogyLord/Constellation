@@ -25,6 +25,8 @@ public abstract class ItemProtectionScreenMixin {
         cancellable = true)
     private void constellation$protectItemClick(Slot slot, int slotId, int button, ContainerInput input, CallbackInfo ci) {
         AbstractContainerScreen<?> screen = (AbstractContainerScreen<?>) (Object) this;
+        // ported from Devonian (GPL-3.0-only): features/misc/inventory/SlotBinding.kt
+        if (com.froggylord.constellation.constellation.PhoenixSlotBinding.shouldHandleClick(screen, slot, button, input)) { ci.cancel(); return; }
         if (com.froggylord.constellation.constellation.HerculesDnaAnalyzer.shouldBlockClick(screen, slot, slotId, button, input)) { ci.cancel(); return; }
         if (com.froggylord.constellation.constellation.HerculesPlotIcons.shouldBlockClick(screen, slot, slotId, button, input)) { ci.cancel(); return; }
         if (com.froggylord.constellation.constellation.HerculesVisitorHelper.shouldBlockClick(screen, slot, slotId, input)) { ci.cancel(); return; }
@@ -59,6 +61,8 @@ public abstract class ItemProtectionScreenMixin {
         com.froggylord.constellation.constellation.HerculesPlotPrices.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesToolkitCropIcons.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.PhoenixWardrobeKeybinds.drawSlot(graphics, screen, slot);
+        // ported from Devonian (GPL-3.0-only): features/misc/inventory/SlotBinding.kt
+        com.froggylord.constellation.constellation.PhoenixSlotBinding.drawSlot(graphics, screen, slot, mouseX, mouseY);
         if (slot != null && ItemProtection.showMarker(slot.getItem()))
             graphics.text(net.minecraft.client.Minecraft.getInstance().font, "P", slot.x + 1, slot.y + 1, 0xFF55FF55, true);
     }

@@ -21,11 +21,13 @@ public class PhoenixQol extends BaseConstellation {
     @Override
     public void init(InitContext ctx) {
         PhoenixWardrobeKeybinds.init((PhoenixConfig) config);
+        PhoenixSlotBinding.init((PhoenixConfig) config);
     }
 
     @Override
     public void registerCommands(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         PhoenixWardrobeKeybinds.registerCommands(dispatcher);
+        PhoenixSlotBinding.registerCommands(dispatcher);
     }
 
     private static long lastSaveAt = 0;
