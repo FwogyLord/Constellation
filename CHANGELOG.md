@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.665 (2026-07-30) — Garden Composter
+
+- added live Organic Matter, Fuel, Stored Compost and accurate empty-time tracking from the Garden tab widget
+- added the Composter inventory material/cost/profit overlay, sack counts and compact inventory numbers
+- added profile-specific upgrade-level learning, market-priced upgrade tooltips and purchasable-upgrade highlighting
+- added Garden/outside-Garden HUD modes, low-resource and near-empty warnings, persistence and full command/config controls
+
 ## 0.9.664 (2026-07-30) — Garden farming lanes
 
 - added profile-specific per-crop farming lanes with automatic two-layer detection and manual start/end placement

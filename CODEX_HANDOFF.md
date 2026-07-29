@@ -1,6 +1,6 @@
 # Codex handoff: Constellation dungeon feature work
 
-Last updated: 2026-07-30 for version 0.9.664 Garden farming lanes.
+Last updated: 2026-07-30 for version 0.9.665 Garden Composter.
 
 This file is the durable continuation prompt for a new coding chat. Read it completely, then read `.forge/build-principles.md` before changing anything. Keep this file updated in every feature run, before the final build and deployment.
 
@@ -10,7 +10,7 @@ This file is the durable continuation prompt for a new coding chat. Read it comp
 - Minecraft 26.2 Fabric client for Hypixel SkyBlock.
 - Java package: `com.froggylord.constellation`
 - License: GPL-3.0-only.
-- Current artifact version: `0.9.664`.
+- Current artifact version: `0.9.665`.
 - Main objective: build the useful main SkyBlock features in depth from the user's live `Froggy__Lord Skyblock 26.1.2` Prism settings and licensed local references. Dungeon selection is now broad enough; prioritize Kuudra, slayers, general inventory/UI, Garden, mining, Rift, fishing/hunting, Diana/events, and Crimson Isle based on actual enabled settings.
 - Work in one small feature run at a time. Research, port, build, boot, audit, update this document, and deploy each feature independently.
 - The user repeatedly says `keep building`; continue the queue without requesting phase approval.
@@ -1583,3 +1583,17 @@ Optional endpoint boxes, beams and labels use configurable color, height and thr
 Version `0.9.664` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Gradle's redirected stream buffered before the markers while `run/logs/latest.log` captured both at 00:35:31. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `29478b9317c3988ad5cce3e6518dc6c0cb8068f0ee6889cc59c88c55453adfa5`.
 
 The old `0.9.663` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-003815-0.9.664/`; only `constellation-0.9.664.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.665 Garden Composter
+
+`HerculesComposter.java`, `ComposterHudWidget.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory inventory hooks in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/composter/ComposterApi.kt`, `ComposterDisplay.kt`, `ComposterInventoryNumbers.kt`, `ComposterOverlay.kt`, `GardenComposterInventoryFeatures.kt`, `data/garden/ComposterUpgradesData.kt` and `config/features/garden/composter/ComposterConfig.kt`.
+
+The tracker reads the exact Composter tab widget and stores Organic Matter, Fuel, Stored Compost, next-compost duration and inactivity per SkyBlock profile. Opening Composter Upgrades learns the five upgrade levels. Empty time uses the licensed fractional-current-cycle formula, 10-minute base divided by the 20-percent-per-level speed multiplier, one-percent cost reduction per level, and the first exhausted resource. Persistence updates only when resources or the calculated deadline materially change.
+
+The exact Composter inventory gets compact values on its three resource slots and a side overlay selecting the cheapest known organic and fuel inputs by live replacement price per unit. It shows required quantities, optional observed sack counts, costs, Stored Compost, empty time and multi-drop-adjusted profit. Organic candidates include the current Garden crops and four direct high-value materials; fuel includes Biofuel with its 20,000-coin cap, Volta, Oil Barrel and Sunflower Oil. Floor/ceiling fill behavior is saved.
+
+Composter Upgrades tooltips append the combined known market cost while excluding Copper, and purchasable entries receive a gold advisory highlight. A dedicated movable HUD supports full Garden resources or only the persisted outside-Garden countdown. Low Organic Matter, low Fuel and near-empty alerts have independent toggles, thresholds, title behavior and cooldowns. `/composter` exposes status, clearing, thresholds and operational toggles. The feature never retrieves materials, buys, clicks or sends gameplay actions.
+
+Version `0.9.665` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `21a8d6546be869a5cbff9a20b1b6a6ce37dd8d3bbad5fff89e2d21b803c0999f`.
+
+The old `0.9.664` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-004912-0.9.665/`; only `constellation-0.9.665.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

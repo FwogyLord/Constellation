@@ -103,6 +103,7 @@ This is the readable map of what Constellation currently contains. It is organiz
 - Specialized farming-tool level/XP display with overflow levels, XP rate/ETA, upgrade/overclock state, wrong-crop warning and precise sound muting
 - Minimum-swap DNA Analyzer solver with validated color boards, manual next-pair highlights, close protection and optional wrong-click safeguards
 - Profile-specific per-crop farming lanes with automatic two-layer detection, manual start/end placement, distance/time HUD, endpoint waypoints and switch warnings
+- Profile-specific Composter resource/empty-time tracking, material and profit overlay, inventory numbers, upgrade prices/highlights and low-resource warnings
 - Profile-specific crop start and last-farmed waypoints with manual per-crop placement and configurable world rendering
 - Farming mouse lock and percentage sensitivity reduction with manual commands, keybind, tool auto-modes, ground/plot checks and teleport release
 - Garden-only home, Barn and named-plot command shortcuts with configurable no-GUI hotkeys

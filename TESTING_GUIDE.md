@@ -25,7 +25,34 @@ You do not need to test everything in one sitting. Start with the five-minute ch
 
 If all seven pass, the shared framework is healthy. Continue with whichever area you actually play.
 
-## Garden farming lanes: test this release first
+## Garden Composter: test this release first
+
+### Resource and inventory overlay
+
+1. Enable Hercules, `Composter Helper` and `Composter Overlay`.
+2. Enter the Garden and wait for the Composter tab widget to appear.
+3. Open the `Composter` inventory.
+
+- [ ] Expected: a side panel shows Organic Matter, Fuel, selected fill materials, required quantities, market costs, Stored Compost, estimated empty time and profit per compost.
+- [ ] Compare Organic Matter and Fuel with the tab widget and inventory bars. Expected: values match, including decimal and `k`/`m` formatting.
+- [ ] Enable sack counts after opening the corresponding sacks. Expected: known counts appear beside the selected materials; unknown counts remain omitted rather than guessed.
+- [ ] Toggle round-down. Expected: fill amounts change between conservative floor and complete-fill ceiling quantities.
+- [ ] Inspect slots 13, 46 and 52. Expected: compact Stored Compost, Organic Matter and Fuel numbers render only in this exact menu.
+
+### Upgrades, persistence and alerts
+
+- [ ] Open `Composter Upgrades`. Expected: available `Click to upgrade!` entries receive a gold highlight.
+- [ ] Hover an upgrade with item costs. Expected: its tooltip adds the combined known market cost and excludes Copper.
+- [ ] Close the menu and run `/composter status`. Expected: learned upgrade levels affect capacity, cost reduction, speed and multi-drop profit calculations.
+- [ ] Enable the Composter display and move it in `/cn hud`. Expected: the Garden HUD shows current resources and empty time.
+- [ ] Enable outside-Garden display, then leave the Garden. Expected: only the persisted empty countdown remains visible.
+- [ ] Enable low-resource notifications and set `/composter lowmatter <amount>` or `/composter lowfuel <amount>` above the current value. Expected: one warning occurs and respects the configured cooldown.
+- [ ] Enable near-empty warnings. Expected: alerts begin only within the configured threshold and are rate-limited.
+- [ ] Switch SkyBlock profiles. Expected: resources and upgrade levels never leak between profiles.
+- [ ] Run `/composter clear`. Expected: only the current profile's persisted timer/state clears.
+- [ ] Verify all inventory clicks remain unchanged. Expected: the feature only draws and reads data; it never retrieves, buys, clicks or sends a gameplay action.
+
+## Garden farming lanes
 
 ### Save a lane
 

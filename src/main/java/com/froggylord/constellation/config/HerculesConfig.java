@@ -401,6 +401,33 @@ public class HerculesConfig extends BaseConfigGroup {
     public String farmingLaneIgnoredCrops = "";
     public Map<String, String> farmingLanes = new HashMap<>();
 
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/composter/ComposterConfig.kt
+    public boolean composterHelper = true;
+    public boolean composterOverlay = true;
+    public boolean composterDisplay = false;
+    public boolean composterDisplayOutsideGarden = false;
+    public boolean composterWarnAlmostEmpty = false;
+    public boolean composterWarningTitle = true;
+    public boolean composterNotifyLow = false;
+    public boolean composterNotifyLowTitle = false;
+    public boolean composterUpgradePrice = true;
+    public boolean composterRoundDown = true;
+    public boolean composterHighlightUpgrade = true;
+    public boolean composterInventoryNumbers = true;
+    public boolean composterShowSackCounts = true;
+    public boolean composterShowProfit = true;
+    public boolean composterShowStored = true;
+    public boolean composterShowEmptyTime = true;
+    public int composterLowOrganicMatter = 20000;
+    public int composterLowFuel = 10000;
+    public int composterAlmostEmptyMinutes = 20;
+    public int composterReminderCooldownMinutes = 5;
+    public int composterOverlayColor = 0xA0000000;
+    public double composterMinimumOrganicMatter = 1000;
+    public long composterEmptyAt = 0;
+    public Map<String, String> composterStates = new HashMap<>();
+    public Map<String, Integer> composterUpgrades = new HashMap<>();
+
     public int speedWheat = 93, speedCarrot = 93, speedPotato = 93, speedNetherWart = 93;
     public int speedPumpkin = 155, speedMelon = 155, speedCocoa = 155, speedSugarCane = 328;
     public int speedCactus = 464, speedMushroom = 233, speedSunflower = 328, speedMoonflower = 328, speedWildRose = 328;
