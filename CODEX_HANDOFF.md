@@ -1,6 +1,6 @@
 # Codex handoff: Constellation dungeon feature work
 
-Last updated: 2026-07-30 for version 0.9.665 Garden Composter.
+Last updated: 2026-07-30 for version 0.9.666 Upcoming Jacob contests.
 
 This file is the durable continuation prompt for a new coding chat. Read it completely, then read `.forge/build-principles.md` before changing anything. Keep this file updated in every feature run, before the final build and deployment.
 
@@ -10,7 +10,7 @@ This file is the durable continuation prompt for a new coding chat. Read it comp
 - Minecraft 26.2 Fabric client for Hypixel SkyBlock.
 - Java package: `com.froggylord.constellation`
 - License: GPL-3.0-only.
-- Current artifact version: `0.9.665`.
+- Current artifact version: `0.9.666`.
 - Main objective: build the useful main SkyBlock features in depth from the user's live `Froggy__Lord Skyblock 26.1.2` Prism settings and licensed local references. Dungeon selection is now broad enough; prioritize Kuudra, slayers, general inventory/UI, Garden, mining, Rift, fishing/hunting, Diana/events, and Crimson Isle based on actual enabled settings.
 - Work in one small feature run at a time. Research, port, build, boot, audit, update this document, and deploy each feature independently.
 - The user repeatedly says `keep building`; continue the queue without requesting phase approval.
@@ -1597,3 +1597,17 @@ Composter Upgrades tooltips append the combined known market cost while excludin
 Version `0.9.665` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `21a8d6546be869a5cbff9a20b1b6a6ce37dd8d3bbad5fff89e2d21b803c0999f`.
 
 The old `0.9.664` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-004912-0.9.665/`; only `constellation-0.9.665.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.666 Upcoming Jacob contests
+
+`HerculesJacobUpcoming.java`, `UpcomingJacobHudWidget.java`, `HerculesConfig.java` and `HerculesFarming.java` port SkyHanni LGPL `features/garden/GardenNextJacobContest.kt`, `config/features/garden/NextJacobContestConfig.kt`, `api/EliteDevApi.kt` and `data/jsonobjects/elitedev/EliteContestJson.kt`.
+
+The implementation fetches `https://api.eliteskyblock.com/contests/at/now` through one daemon executor and a shared timeout-bounded HTTP client. It accepts both the direct current API object and a wrapped `data` object, validates every timestamp and exactly three known crops, sorts the schedule, and swaps state only after a complete valid parse. Failures retain the old schedule. Automatic retries are configurable and bounded to ten minutes by default; deliberate `/nextcontest refresh` bypasses that delay.
+
+Only the next 40 future contests persist, limiting config growth while supplying roughly forty hours of immediate offline display. The movable HUD distinguishes active/end time from upcoming/start time, shows all three crops, applies the Garden tab widget's boosted marker, and optionally shows the boosted crop, one-to-five following contests and fetched SkyBlock year. Display and warnings are Garden-scoped unless the outside-Garden option is enabled.
+
+Warnings filter against an editable set of all 13 crops, latch once per contest and independently support chat, title, sound and unfocused-window attention. The message supports `{crops}`, `{time}` and `{boosted}`. `/nextcontest` provides status, refresh, cache clearing, warning timing, per-crop warning toggles, message editing and all main channels. No schedule submission is performed, and the feature sends no server command, inventory click or gameplay packet.
+
+Version `0.9.666` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `b4717d3204198497c7c20bfb5cd5e89175b8d6e4b2818065579180c51869bf90`.
+
+The old `0.9.665` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-005707-0.9.666/`; only `constellation-0.9.666.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

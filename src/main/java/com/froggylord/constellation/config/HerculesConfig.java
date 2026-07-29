@@ -428,6 +428,28 @@ public class HerculesConfig extends BaseConfigGroup {
     public Map<String, String> composterStates = new HashMap<>();
     public Map<String, Integer> composterUpgrades = new HashMap<>();
 
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/NextJacobContestConfig.kt
+    public boolean jacobUpcomingDisplay = true;
+    public boolean jacobUpcomingOutsideGarden = false;
+    public boolean jacobUpcomingFetchAutomatically = true;
+    public boolean jacobUpcomingWarning = false;
+    public boolean jacobUpcomingWarningTitle = true;
+    public boolean jacobUpcomingWarningChat = true;
+    public boolean jacobUpcomingWarningSound = true;
+    public boolean jacobUpcomingWarningAttention = false;
+    public boolean jacobUpcomingShowBoosted = true;
+    public boolean jacobUpcomingShowFollowing = false;
+    public boolean jacobUpcomingShowSource = false;
+    public int jacobUpcomingWarningSeconds = 120;
+    public int jacobUpcomingFetchMinutes = 10;
+    public int jacobUpcomingFollowingCount = 2;
+    public int jacobUpcomingTitleTicks = 60;
+    public String jacobUpcomingWarnCrops = "WHEAT,CARROT,POTATO,NETHER_WART,PUMPKIN,MELON,COCOA,SUGAR_CANE,CACTUS,MUSHROOM,SUNFLOWER,MOONFLOWER,WILD_ROSE";
+    public String jacobUpcomingMessage = "Farming Contest soon: {crops} in {time}";
+    public Map<String, String> jacobUpcomingContests = new HashMap<>();
+    public int jacobUpcomingYear = 0;
+    public long jacobUpcomingFetchedAt = 0;
+
     public int speedWheat = 93, speedCarrot = 93, speedPotato = 93, speedNetherWart = 93;
     public int speedPumpkin = 155, speedMelon = 155, speedCocoa = 155, speedSugarCane = 328;
     public int speedCactus = 464, speedMushroom = 233, speedSunflower = 328, speedMoonflower = 328, speedWildRose = 328;

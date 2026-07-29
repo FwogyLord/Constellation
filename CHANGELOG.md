@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.666 (2026-07-30) — Upcoming Jacob contests
+
+- added automatic authoritative EliteSkyBlock contest schedules with bounded background fetching and future-only persistence
+- added current/next crops, start/end countdown, boosted crop and optional following-contest HUD rows
+- added crop-filtered title/chat/sound/window-attention warnings with fully editable message variables
+- added manual refresh, cache recovery, fetch timing, source display and Garden/outside-Garden controls
+
 ## 0.9.665 (2026-07-30) — Garden Composter
 
 - added live Organic Matter, Fuel, Stored Compost and accurate empty-time tracking from the Garden tab widget

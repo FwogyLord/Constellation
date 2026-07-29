@@ -25,7 +25,33 @@ You do not need to test everything in one sitting. Start with the five-minute ch
 
 If all seven pass, the shared framework is healthy. Continue with whichever area you actually play.
 
-## Garden Composter: test this release first
+## Upcoming Jacob contests: test this release first
+
+### Schedule and HUD
+
+1. Enable Hercules, `Jacob Upcoming Display` and `Jacob Upcoming Fetch Automatically`.
+2. Enter SkyBlock and run `/nextcontest refresh`.
+
+- [ ] Expected: the movable Next Jacob Contest HUD shows exactly three upcoming crops and a start countdown from the current EliteSkyBlock schedule.
+- [ ] During an active contest, expected: the row changes to Active and counts down to the contest end.
+- [ ] In the Garden, compare the boosted marker in the tab widget. Expected: Boosted names the matching crop and prefixes it with `*` in the crop list.
+- [ ] Enable following contests and set the following count. Expected: one to five later contests appear in timestamp order.
+- [ ] Enable the schedule source row. Expected: the fetched SkyBlock year appears.
+- [ ] Disable outside-Garden display and leave the Garden. Expected: the HUD hides; enabling it restores the same persisted countdown.
+- [ ] Restart before the next automatic fetch. Expected: up to 40 future contests load immediately from cache without waiting for the network.
+
+### Warnings and recovery
+
+- [ ] Enable upcoming warnings and set `/nextcontest warning 120`. Expected: one warning occurs within two minutes of a selected contest and never repeats for that contest.
+- [ ] Toggle a crop with `/nextcontest warncrop <crop>`. Expected: contests containing only disabled crops do not warn.
+- [ ] Set `/nextcontest message Farming Contest soon: {crops} in {time}`. Expected: `{crops}`, `{time}` and optional `{boosted}` resolve from live data.
+- [ ] Toggle title, chat, sound and window attention independently. Expected: each channel follows its own setting; window attention only requests attention when unfocused.
+- [ ] Disable automatic fetching and run `/nextcontest refresh`. Expected: deliberate refresh still works.
+- [ ] Run `/nextcontest clear`. Expected: cached contests clear without affecting live contest progress or other Garden data.
+- [ ] Disconnect during a fetch or simulate a failed request. Expected: no crash, no partial schedule replacement, and the last valid cache remains.
+- [ ] Verify no server command, click, movement or gameplay packet is generated.
+
+## Garden Composter
 
 ### Resource and inventory overlay
 
