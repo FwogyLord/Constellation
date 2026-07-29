@@ -58,6 +58,7 @@ public abstract class ItemProtectionScreenMixin {
         com.froggylord.constellation.constellation.HerculesPesthunterShop.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesPlotPrices.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesToolkitCropIcons.drawSlot(graphics, screen, slot);
+        com.froggylord.constellation.constellation.PhoenixWardrobeKeybinds.drawSlot(graphics, screen, slot);
         if (slot != null && ItemProtection.showMarker(slot.getItem()))
             graphics.text(net.minecraft.client.Minecraft.getInstance().font, "P", slot.x + 1, slot.y + 1, 0xFF55FF55, true);
     }

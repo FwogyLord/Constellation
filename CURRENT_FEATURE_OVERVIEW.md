@@ -229,7 +229,9 @@ This is the readable map of what Constellation currently contains. It is organiz
 - Fullbright and fog/overlay controls
 - Auto sprint and instant/legacy sneak options
 - Etherwarp target overlay
-- Wardrobe/loadout keybind support
+- Armor and equipment wardrobe keys with hotbar, number-row or custom slot mapping
+- Wardrobe page, open, unequip and two-slot swap keys
+- Wardrobe slot labels, equipped-set protection, cooldown, sound and invalid-key controls
 - Slot locking and item protection integration
 - Auto-save reminder
 - Sign calculator and input helpers

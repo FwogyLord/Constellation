@@ -839,6 +839,17 @@ Enable Lyra and Phoenix protection/inventory features. Use inexpensive test item
 
 ### Test
 
+- [ ] Enable Phoenix and `wardrobeKeybinds`, then open Wardrobe, Armor Sets and Equipment Sets. Expected: the helper activates only in the enabled exact menus.
+- [ ] With `wardrobeKeyStyle` set to `HOTBAR`, press each configured hotbar key over slots 1 through 9. Expected: the corresponding visible set is selected once.
+- [ ] Run `/wardrobekeys style number`. Expected: the physical number-row keys select sets even if Minecraft hotbar keys were rebound.
+- [ ] Run `/wardrobekeys style custom`, then bind Wardrobe Slot 1 through 9 in Minecraft Controls. Expected: keyboard and mouse bindings work and unbound slots show no `Unknown` label.
+- [ ] Use the Wardrobe Previous Page and Wardrobe Next Page controls. Expected: A and D click the actual previous/next menu buttons by default, subject to the configured cooldown.
+- [ ] Test an empty, locked or unavailable set. Expected: no menu click occurs; the original key is consumed only when `wardrobeConsumeInvalidKeys` is enabled.
+- [ ] Press the key for the currently equipped set with `wardrobePreventUnequip` enabled. Expected: it remains equipped and optional local feedback explains why.
+- [ ] Disable prevent-unequip and bind Wardrobe Unequip. Expected: the explicit key unequips the active set; ordinary set keys still select their set.
+- [ ] Run `/wardrobekeys swap 1 2`, enable the swap option and bind Wardrobe Swap. Expected: the key selects slot 2 when slot 1 is equipped and otherwise selects slot 1.
+- [ ] Bind Wardrobe Open. Expected: it deliberately sends `/wardrobe` once when pressed on Hypixel and never opens anything automatically.
+- [ ] Toggle labels, label position, label color, sound, feedback and cooldown. Expected: each option persists and changes only its documented presentation or input behavior.
 - [ ] Hover Bazaar, auction and ordinary items. Expected: relevant prices appear without duplicated or impossible values.
 - [ ] Open storage/backpacks. Expected: previews and total value correspond to contained items.
 - [ ] Search inventory. Expected: matching items remain clear and unrelated items are dimmed as configured.

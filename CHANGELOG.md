@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.678 (2026-07-30) — Wardrobe keybinds
+
+- added hotbar, number-row and individually configurable wardrobe slot keys
+- added armor-set and equipment-set support, page keys, an optional unequip key and two-slot swap
+- added slot-key labels, equipped-set protection, invalid-key handling, click cooldown, sound and feedback controls
+- added an optional wardrobe-open key and complete `/wardrobekeys` configuration commands
+
 ## 0.9.677 (2026-07-30) — Carrolyn fetch helper
 
 - added exact-lore recognition and navigation tooltips for every Carrolyn donation item

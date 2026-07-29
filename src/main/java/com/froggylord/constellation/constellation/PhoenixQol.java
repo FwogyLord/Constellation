@@ -5,6 +5,8 @@ import com.froggylord.constellation.config.PhoenixConfig;
 import com.froggylord.constellation.core.BaseConstellation;
 import com.froggylord.constellation.core.InitContext;
 import com.froggylord.constellation.render.WorldRenderer;
+import com.mojang.brigadier.CommandDispatcher;
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -18,6 +20,12 @@ public class PhoenixQol extends BaseConstellation {
 
     @Override
     public void init(InitContext ctx) {
+        PhoenixWardrobeKeybinds.init((PhoenixConfig) config);
+    }
+
+    @Override
+    public void registerCommands(CommandDispatcher<FabricClientCommandSource> dispatcher) {
+        PhoenixWardrobeKeybinds.registerCommands(dispatcher);
     }
 
     private static long lastSaveAt = 0;
