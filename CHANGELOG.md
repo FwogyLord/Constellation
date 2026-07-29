@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.674 (2026-07-30) — Garden plot prices
+
+- added complete Configure Plots material and total coin-value breakdowns
+- added locked-plot price ranking, cheapest-plot highlighting and visible unlock total
+- added inventory and observed-sack affordability checks with optional affordable highlighting
+- added multi-material parsing, row controls, delayed-price refresh and fail-closed incomplete costs
+
 ## 0.9.673 (2026-07-30) — Pesthunter shop profit
 
 - added live Pesthunter offer ranking by profit per Pest spent

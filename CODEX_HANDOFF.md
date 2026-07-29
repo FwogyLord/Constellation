@@ -1707,3 +1707,17 @@ The side panel ranks one-to-twenty fully priced trades by profit per Pest, optio
 Version `0.9.673` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `2997374c08572a5157806bc6f11364571d6d986b9ced49badf2229ef8fbbdd93`.
 
 The old `0.9.672` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-020246-0.9.673/`; only `constellation-0.9.673.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.674 Garden plot prices
+
+`HerculesPlotPrices.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory render/tooltip chain in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/inventory/plots/GardenNextPlotPrice.kt`.
+
+The feature runs only in the Garden and exact `Configure Plots` menu. Any item whose name begins with `Plot` and has a visible `Cost` section is parsed. Both inline `Cost: ...` and following multi-line material layouts are supported, along with `Item xN` and `Nx Item` quantities. Every material uses current replacement value. Unknown material IDs or unavailable prices exclude the entire plot rather than displaying a partial total.
+
+The licensed inline material-price addition is preserved by copying the original tooltip components and appending values. Complete plot total, inventory plus observed-sack ownership and affordability are independent additions. The side panel ranks one-to-twenty fully priced locked plots by total cost and can show the total of all currently visible locked plots.
+
+Cheapest-plot and affordable-plot highlights are independent; affordability takes presentation priority when both apply. The existing Configure Plots status, pest, spray and icon features still run first and are not mutated. Bazaar/Auction refresh invalidates cached menu calculations every five seconds. `/plotprices` exposes row count and every inline, panel, total, ownership, affordability and highlighting control. No plot purchase is blocked, changed or generated.
+
+Version `0.9.674` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `07435c100d1b1f8d9f04416b5940fca8991bf41ca454cbec3bde91d5d2c1deed`.
+
+The old `0.9.673` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-020943-0.9.674/`; only `constellation-0.9.674.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

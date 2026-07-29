@@ -358,6 +358,20 @@ public class HerculesConfig extends BaseConfigGroup {
     public int plotMenuLockedColor = 0x90555555;
     public int plotMenuPastingColor = 0x90FFFF55;
     public String plotMenuPriority = "current,pests,sprays,locked,pasting";
+    // ported from SkyHanni (LGPL-3.0-or-later): features/garden/inventory/plots/GardenNextPlotPrice.kt
+    public boolean plotPriceHelper = true;
+    public boolean plotPriceInlineMaterials = true;
+    public boolean plotPriceShowTotal = true;
+    public boolean plotPricePanel = true;
+    public boolean plotPriceShowVisibleTotal = true;
+    public boolean plotPriceShowOwned = true;
+    public boolean plotPriceShowAffordable = true;
+    public boolean plotPriceHighlightCheapest = true;
+    public boolean plotPriceHighlightAffordable = true;
+    public int plotPriceMaxRows = 8;
+    public int plotPricePanelColor = 0xD0181824;
+    public int plotPriceCheapestColor = 0x90FFFF55;
+    public int plotPriceAffordableColor = 0x9055FF55;
 
     public boolean plotIcons = true;
     public boolean plotIconEditorButton = true;

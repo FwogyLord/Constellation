@@ -2,6 +2,28 @@
 
 You do not need to test everything in one sitting. Start with the five-minute check, then test one game-area session whenever you naturally play that area. Checkboxes are intentionally split into small groups.
 
+## Garden plot prices
+
+### Enable
+
+1. Enable Hercules and `Plot Price Helper`.
+2. Enter the Garden and open `Configure Plots`.
+3. Allow several seconds for Bazaar and Auction prices to load.
+
+### Test
+
+- [ ] Open Configure Plots. Expected: a side panel ranks fully priced locked plots from cheapest to most expensive.
+- [ ] Hover a locked plot. Expected: each recognized material line gains its coin value and the tooltip shows the complete plot total.
+- [ ] Inspect a multi-material cost. Expected: every material is priced and included exactly once.
+- [ ] Keep Show Owned enabled. Expected: tooltip rows compare inventory plus observed sack quantities against each requirement.
+- [ ] Hold enough required materials. Expected: the tooltip reports affordability and optional green highlighting appears.
+- [ ] Enable Cheapest Highlight while unable to afford the cheapest plot. Expected: only the cheapest fully priced plot receives the configured yellow highlight.
+- [ ] Run `/plotprices rows 3`. Expected: the panel shows no more than three plots plus the optional visible-total row.
+- [ ] Disable Inline, Total, Panel, Visible Total, Owned, Affordable, Cheapest and Affordable Highlight independently. Expected: only the corresponding presentation changes.
+- [ ] Wait for a missing market price to load. Expected: the plot appears automatically after the next refresh.
+- [ ] Present a cost with an unknown material or unavailable price. Expected: that plot is omitted rather than shown with a partial total.
+- [ ] Click a locked plot manually. Expected: Constellation does not block, modify or generate the click.
+
 ## Pesthunter shop profit
 
 ### Enable
