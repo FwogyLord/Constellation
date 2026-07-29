@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.677 (2026-07-30) — Carrolyn fetch helper
+
+- added exact-lore recognition and navigation tooltips for every Carrolyn donation item
+- added inventory progress toward the 3,000-item requirement
+- added deliberate click-to-start guidance and a clickable Crimson Isle warp action
+- added configurable box, beam, line, label, distance, range, color and arrival behavior
+
 ## 0.9.676 (2026-07-30) — Garden rod-break protection
 
 - added Garden-only fishing-rod block-damage protection with packet-safe cancellation

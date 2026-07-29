@@ -420,6 +420,27 @@ public class HerculesConfig extends BaseConfigGroup {
     public boolean noRodBreakSound = false;
     public int noRodBreakFeedbackCooldownSeconds = 2;
 
+    // ported from SkyHanni (LGPL-3.0-or-later): features/garden/inventory/CarrolynHelper.kt
+    public boolean carrolynHelper = true;
+    public boolean carrolynTooltip = true;
+    public boolean carrolynTooltipOwned = true;
+    public boolean carrolynTooltipWarp = true;
+    public boolean carrolynClickNavigation = true;
+    public boolean carrolynClickableWarp = true;
+    public boolean carrolynBox = true;
+    public boolean carrolynBeam = true;
+    public boolean carrolynLine = true;
+    public boolean carrolynLabel = true;
+    public boolean carrolynDistance = true;
+    public boolean carrolynThroughWalls = true;
+    public boolean carrolynAutoStop = true;
+    public boolean carrolynStartChat = true;
+    public boolean carrolynArrivalChat = true;
+    public int carrolynColor = 0xFFFF55FF;
+    public int carrolynRenderRange = 2048;
+    public int carrolynBeamHeight = 12;
+    public int carrolynStopDistance = 4;
+
     public boolean mouseSensitivityHelper = true;
     public boolean mouseSensitivityAutoEnable = false;
     public boolean mouseSensitivityHud = true;

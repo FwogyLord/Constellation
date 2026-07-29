@@ -17,6 +17,7 @@ public class HerculesFarming extends BaseConstellation {
         var cfg = (com.froggylord.constellation.config.HerculesConfig) config;
         HerculesVisitorHelper.init(cfg);
         HerculesNoRodBreak.init(cfg);
+        HerculesCarrolynHelper.init(cfg);
         HerculesGardenTracker.init(cfg);
         HerculesPests.init(cfg);
         HerculesPestWaypoint.init(cfg);
@@ -48,6 +49,7 @@ public class HerculesFarming extends BaseConstellation {
         registerRenderer(HerculesPests::draw);
         registerRenderer(HerculesPestWaypoint::draw);
         registerRenderer(HerculesCropLocations::draw);
+        registerRenderer(HerculesCarrolynHelper::draw);
     }
 
     @Override
@@ -127,6 +129,7 @@ public class HerculesFarming extends BaseConstellation {
     public void registerCommands(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         HerculesVisitorHelper.registerCommands(dispatcher);
         HerculesNoRodBreak.registerCommands(dispatcher);
+        HerculesCarrolynHelper.registerCommands(dispatcher);
         HerculesGardenTracker.registerCommands(dispatcher);
         HerculesPests.registerCommands(dispatcher);
         HerculesPestWaypoint.registerCommands(dispatcher);

@@ -474,6 +474,18 @@ If all seven pass, the shared framework is healthy. Continue with whichever area
 - [ ] Test action-bar, chat and sound options plus `/norodbreak cooldown 0` and `2`. Expected: each feedback channel and throttle persists independently.
 - [ ] Leave the Garden and left-click a block with the rod. Expected: Constellation does not cancel the interaction.
 - [ ] Run `/norodbreak resetcount`. Expected: only the local session prevention count resets.
+
+### Carrolyn fetch helper
+
+- [ ] Enable Hercules and hover an item whose lore says to bring 3,000 to Carrolyn. Expected: the tooltip offers click-to-navigate help and shows the matching inventory total out of 3,000.
+- [ ] Hover an ordinary item. Expected: no Carrolyn lines are added.
+- [ ] While outside the Crimson Isle, hold a recognized item and left- or right-click into the world. Expected: the click itself remains normal and chat offers a deliberate `[Warp there]` action.
+- [ ] Click the warp action. Expected: `/warp crimson` runs only after your click; navigation remains armed during the island change.
+- [ ] On the Crimson Isle, start navigation with the item or `/carrolyn start`. Expected: a magenta box, beam, tracer and distance label point to Carrolyn near `(0, 104, -804)`.
+- [ ] Approach within four blocks. Expected: navigation stops and the optional arrival message appears.
+- [ ] Run `/carrolyn stop`. Expected: all Carrolyn world guidance immediately disappears.
+- [ ] Test tooltip, owned, tooltipwarp, click, warp, box, beam, line, label, distance, throughwalls, autostop, startchat and arrivalchat options independently.
+- [ ] Test `/carrolyn range`, `beamheight`, `stopdistance` and `color`. Expected: bounded values persist and affect only this helper.
 - [ ] Restart and switch profiles. Expected: locations survive restart and remain separate per profile.
 - [ ] Disable per-profile storage. Expected: a separate global layout is selected without deleting profile layouts.
 - [ ] Run `clear`, `clearstart`, `clearlast`, `clearall` and `clearprofiles` deliberately. Expected: only the documented crop/scope is removed.

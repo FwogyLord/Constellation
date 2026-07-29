@@ -1747,3 +1747,15 @@ The default action-bar feedback is throttled to two seconds. Action-bar, chat an
 Version `0.9.676` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and whitespace audits pass. Main-jar SHA-256: `148997b3f94fa39c24ef16a81f511bd0d62b3aaa724e67f6ce98b1968c4675fb`.
 
 The old `0.9.675` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-022517-0.9.676/`; only `constellation-0.9.676.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.677 Carrolyn fetch helper
+
+`HerculesCarrolynHelper.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory tooltip chain in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/inventory/CarrolynHelper.kt`. The destination `(0, 104, -804)` comes from the licensed `repo/constants/island_graphs/CRIMSON_ISLE.json` Carrolyn NPC node and agrees with the current official Hypixel Wiki location.
+
+Recognition requires the exact normalized lore contract `Bring 3,000 of these to Carrolyn in`; names alone never activate the helper. The tooltip adds click guidance, matching-item inventory ownership out of 3,000 and optional off-island warp guidance. This automatically covers all current and future items that use the authoritative Carrolyn lore rather than maintaining a stale name allowlist.
+
+Main-hand left and right world clicks are observed through Fabric callbacks and always return `PASS`, preserving the original block, entity or item interaction. Outside the Crimson Isle, a clickable `/warp crimson` action is shown but never run automatically. Navigation remains armed across that deliberate warp. On the island, configurable box, beam, tracer, label and distance guidance points to the licensed NPC node. Range, beam height, color, through-walls behavior, auto-stop distance and start/arrival chat are saved independently. `/carrolyn` exposes manual start/stop, status and every control.
+
+Version `0.9.677` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and whitespace audits pass. Main-jar SHA-256: `1418acf6db023bf658607853e90b419f1cd81b40a735020c3dc3383142927be6`.
+
+The old `0.9.676` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-023316-0.9.677/`; only `constellation-0.9.677.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
