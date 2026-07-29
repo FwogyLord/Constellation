@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.673 (2026-07-30) — Pesthunter shop profit
+
+- added live Pesthunter offer ranking by profit per Pest spent
+- added estimated output value, material cost, trade profit, Pest cost and per-Pest tooltip breakdowns
+- added best-offer highlighting, positive-profit filtering, row controls and delayed-price refresh
+- made unknown materials, unavailable prices and missing item IDs fail closed instead of inflating profit
+
 ## 0.9.672 (2026-07-30) — Visitor Logbook analytics
 
 - added profile-safe multi-page Visitor's Logbook capture and restoration

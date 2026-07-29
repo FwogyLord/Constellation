@@ -215,6 +215,18 @@ public class HerculesConfig extends BaseConfigGroup {
     public Map<String, Long> pestLifetimeDrops = new HashMap<>();
     public Map<String, Integer> pestPlotNames = new HashMap<>();
     public double pestLifetimeProfit = 0;
+    // ported from SkyHanni (LGPL-3.0-or-later): config/features/garden/pests/PesthunterShopConfig.kt
+    public boolean pesthunterProfit = true;
+    public boolean pesthunterHighlightBest = true;
+    public boolean pesthunterOnlyPositive = false;
+    public boolean pesthunterShowItemPrice = true;
+    public boolean pesthunterShowMaterialCost = true;
+    public boolean pesthunterShowTradeProfit = true;
+    public boolean pesthunterShowPestCost = true;
+    public boolean pesthunterShowProfitPerPest = true;
+    public int pesthunterMaxRows = 10;
+    public int pesthunterPanelColor = 0xD0181824;
+    public int pesthunterBestColor = 0x9055FF55;
 
     public boolean pestWaypointEnabled = true;
     public boolean pestWaypointHideParticles = false;

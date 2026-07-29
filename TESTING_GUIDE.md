@@ -2,6 +2,27 @@
 
 You do not need to test everything in one sitting. Start with the five-minute check, then test one game-area session whenever you naturally play that area. Checkboxes are intentionally split into small groups.
 
+## Pesthunter shop profit
+
+### Enable
+
+1. Enable Hercules and `Pesthunter Profit`.
+2. Enter the Garden and open the exact `Pesthunter's Wares` menu.
+3. Allow several seconds for Bazaar and Auction prices to load.
+
+### Test
+
+- [ ] Open Pesthunter's Wares. Expected: a side panel ranks fully priced offers by estimated profit per Pest spent.
+- [ ] Hover a ranked output. Expected: its tooltip shows output value, material cost, trade profit, Pests required and profit per Pest.
+- [ ] Compare two trades with different Pest costs. Expected: ranking uses profit divided by Pests, not raw trade profit.
+- [ ] Enable Best Highlight. Expected: only the highest-ranked visible offer receives a green advisory outline.
+- [ ] Enable Positive Only. Expected: losing and zero-profit offers disappear.
+- [ ] Run `/pestshop rows 3`. Expected: no more than three offers appear while the ranking remains correct.
+- [ ] Disable Item Price, Materials, Profit, Pests and Per Pest independently. Expected: only the corresponding tooltip line disappears.
+- [ ] Reopen the shop after prices refresh. Expected: ranking updates without restarting or changing a menu item.
+- [ ] Present an offer with an unresolved material, output ID or required price. Expected: it is omitted rather than priced as though the missing component were free.
+- [ ] Click a normal trade manually. Expected: Constellation neither blocks nor synthesizes the click.
+
 ## Visitor Logbook analytics
 
 ### Enable

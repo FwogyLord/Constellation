@@ -1693,3 +1693,17 @@ The side panel independently shows total visits, accepts, denied visits, accepta
 Version `0.9.672` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `81fc4b49d73217b76070e09ae20f7532547dc7b8fd41795d57943c7937e55bbc`.
 
 The old `0.9.671` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-015517-0.9.672/`; only `constellation-0.9.672.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.673 Pesthunter shop profit
+
+`HerculesPesthunterShop.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory render/tooltip chain in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/pests/PesthunterProfit.kt` and `config/features/garden/pests/PesthunterShopConfig.kt`.
+
+The feature is Garden-gated and requires the exact `Pesthunter's Wares` title. Every visible trade reads its `Cost` section, separates the exact licensed `N Pests` line from additional materials and prices each material at replacement cost. Output IDs come from the real item custom data, including enchantment, rune and pet normalization already used by Lyra tooltips. Stack quantities and trailing `xN` display quantities are both supported.
+
+Unlike the licensed implementation's zero-value fallback for unresolved costs, any unknown material, missing output ID or unavailable required price excludes the offer. This prevents a partial price from appearing as artificial profit. Asynchronous Bazaar and Auction refreshes invalidate the menu fingerprint every five seconds, allowing omitted offers and rankings to appear as soon as complete data exists.
+
+The side panel ranks one-to-twenty fully priced trades by profit per Pest, optionally hides nonpositive trades and highlights only the best visible slot. Hovered ranked outputs independently show estimated item value, material cost, trade profit, Pest cost and profit per Pest. `/pestshop` exposes row count and every display/filter control. All behavior is read-only; no trade is blocked, changed or generated.
+
+Version `0.9.673` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `2997374c08572a5157806bc6f11364571d6d986b9ced49badf2229ef8fbbdd93`.
+
+The old `0.9.672` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-020246-0.9.673/`; only `constellation-0.9.673.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

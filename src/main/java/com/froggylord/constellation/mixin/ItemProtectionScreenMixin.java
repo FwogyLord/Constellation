@@ -55,6 +55,7 @@ public abstract class ItemProtectionScreenMixin {
         com.froggylord.constellation.constellation.HerculesJacobHistory.drawSlot(graphics, screen, slot, mouseX, mouseY);
         com.froggylord.constellation.constellation.HerculesAnitaShop.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesVisitorLogbook.drawSlot(graphics, screen, slot);
+        com.froggylord.constellation.constellation.HerculesPesthunterShop.drawSlot(graphics, screen, slot);
         if (slot != null && ItemProtection.showMarker(slot.getItem()))
             graphics.text(net.minecraft.client.Minecraft.getInstance().font, "P", slot.x + 1, slot.y + 1, 0xFF55FF55, true);
     }
@@ -62,7 +63,8 @@ public abstract class ItemProtectionScreenMixin {
     @Inject(method = "getTooltipFromContainerItem", at = @At("RETURN"), cancellable = true)
     private void constellation$protectedTooltip(ItemStack stack, CallbackInfoReturnable<List<Component>> cir) {
         AbstractContainerScreen<?> screen = (AbstractContainerScreen<?>) (Object) this;
-        cir.setReturnValue(com.froggylord.constellation.constellation.HerculesVisitorLogbook.appendTooltip(screen, stack,
+        cir.setReturnValue(com.froggylord.constellation.constellation.HerculesPesthunterShop.appendTooltip(screen, stack,
+            com.froggylord.constellation.constellation.HerculesVisitorLogbook.appendTooltip(screen, stack,
             com.froggylord.constellation.constellation.HerculesAnitaShop.appendTooltip(screen, stack,
             com.froggylord.constellation.constellation.HerculesComposter.appendTooltip(screen, stack,
             com.froggylord.constellation.constellation.HerculesGardenLevel.appendTooltip(screen, stack,
@@ -74,6 +76,6 @@ public abstract class ItemProtectionScreenMixin {
             com.froggylord.constellation.constellation.HerculesVisitorHelper.appendTooltip(screen, stack,
                 com.froggylord.constellation.constellation.LyraAuctionHelper.appendTooltip(screen, stack,
                     com.froggylord.constellation.constellation.LyraBazaarHelper.appendTooltip(screen, stack,
-                        ItemProtection.appendTooltip(stack, cir.getReturnValue()))))))))))))));
+                        ItemProtection.appendTooltip(stack, cir.getReturnValue())))))))))))))));
     }
 }

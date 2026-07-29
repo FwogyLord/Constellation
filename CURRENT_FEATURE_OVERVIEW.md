@@ -94,6 +94,7 @@ This is the readable map of what Constellation currently contains. It is organiz
 
 - Anita shop profit-per-medal ranking, detailed offer tooltips, best-offer highlighting and remaining Extra Farming Fortune costs
 - Profile-safe Visitor Logbook totals, acceptance/denial rates, page completion, queue correction and visitor rankings
+- Pesthunter shop profit-per-Pest ranking, complete cost tooltips, filtering and best-offer highlighting
 - Profile-specific Garden XP synchronization, level/overflow progress HUD, visitor XP updates and max-level menu details
 - Crop money-per-hour comparison using observed or custom BPS, saved true Fortune and live Bazaar/NPC values
 - Automatic profit ranking or persistent manual position assignment for each individual crop
