@@ -412,6 +412,14 @@ public class HerculesConfig extends BaseConfigGroup {
     public int toolkitCropIconHeldColor = 0xFF55FF55;
     public int toolkitCropIconLabelColor = 0xFFFFFFFF;
 
+    // ported from SkyHanni (LGPL-3.0-or-later): features/garden/farming/NoRodBreak.kt
+    public boolean noRodBreak = true;
+    public boolean noRodBreakSneakBypass = true;
+    public boolean noRodBreakActionbar = true;
+    public boolean noRodBreakChat = false;
+    public boolean noRodBreakSound = false;
+    public int noRodBreakFeedbackCooldownSeconds = 2;
+
     public boolean mouseSensitivityHelper = true;
     public boolean mouseSensitivityAutoEnable = false;
     public boolean mouseSensitivityHud = true;

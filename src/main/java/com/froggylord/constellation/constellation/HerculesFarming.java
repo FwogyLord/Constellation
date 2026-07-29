@@ -16,6 +16,7 @@ public class HerculesFarming extends BaseConstellation {
     public void init(InitContext ctx) {
         var cfg = (com.froggylord.constellation.config.HerculesConfig) config;
         HerculesVisitorHelper.init(cfg);
+        HerculesNoRodBreak.init(cfg);
         HerculesGardenTracker.init(cfg);
         HerculesPests.init(cfg);
         HerculesPestWaypoint.init(cfg);
@@ -125,6 +126,7 @@ public class HerculesFarming extends BaseConstellation {
     @Override
     public void registerCommands(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         HerculesVisitorHelper.registerCommands(dispatcher);
+        HerculesNoRodBreak.registerCommands(dispatcher);
         HerculesGardenTracker.registerCommands(dispatcher);
         HerculesPests.registerCommands(dispatcher);
         HerculesPestWaypoint.registerCommands(dispatcher);

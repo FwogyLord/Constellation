@@ -461,6 +461,19 @@ If all seven pass, the shared framework is healthy. Continue with whichever area
 - [ ] Run `/toolkiticons option labels on`. Expected: compact crop abbreviations appear, including distinct NW, SC, SF, MF and WR labels.
 - [ ] Test `/toolkiticons option background off`, `decorations on`, `highlight off` and `/toolkiticons color held FF55FFFF`. Expected: each presentation setting changes independently and persists.
 - [ ] Click, shift-click and close the menu normally. Expected: no click is blocked, rewritten or generated.
+
+### Garden rod-break protection
+
+- [ ] Enable Hercules, enter the Garden and run `/norodbreak`. Expected: protection and the default sneak bypass report on.
+- [ ] Hold any vanilla-based SkyBlock fishing rod and left-click a crop or solid block without sneaking. Expected: the block does not take damage, no attack packet is sent and the action bar explains the protection.
+- [ ] Keep holding attack against the same block. Expected: block-damage progress never begins and feedback is throttled rather than flooding the HUD.
+- [ ] Right-click with the rod. Expected: casting and retracting work normally.
+- [ ] Attack an entity with the rod. Expected: entity attacks are not changed.
+- [ ] Hold sneak and left-click a block. Expected: the deliberate bypass permits normal block interaction when `/norodbreak option sneak on`.
+- [ ] Run `/norodbreak option sneak off` and repeat while sneaking. Expected: the block remains protected.
+- [ ] Test action-bar, chat and sound options plus `/norodbreak cooldown 0` and `2`. Expected: each feedback channel and throttle persists independently.
+- [ ] Leave the Garden and left-click a block with the rod. Expected: Constellation does not cancel the interaction.
+- [ ] Run `/norodbreak resetcount`. Expected: only the local session prevention count resets.
 - [ ] Restart and switch profiles. Expected: locations survive restart and remain separate per profile.
 - [ ] Disable per-profile storage. Expected: a separate global layout is selected without deleting profile layouts.
 - [ ] Run `clear`, `clearstart`, `clearlast`, `clearall` and `clearprofiles` deliberately. Expected: only the documented crop/scope is removed.

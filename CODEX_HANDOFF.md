@@ -1735,3 +1735,15 @@ Manual specific-crop start placement remains available through `/cropstart set <
 Version `0.9.675` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and whitespace audits pass. Main-jar SHA-256: `dff9a170b7514a3ae9d3286d58fd584531d6fe92bf65aac2f20d54974e8addd6`.
 
 The old `0.9.674` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-021849-0.9.675/`; only `constellation-0.9.675.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.676 Garden rod-break protection
+
+`HerculesNoRodBreak.java`, `HerculesConfig.java` and `HerculesFarming.java` port SkyHanni LGPL `features/garden/farming/NoRodBreak.kt`.
+
+The feature is hard-gated to the Garden, the Hercules master toggle, the dedicated feature toggle, main-hand left-click block callbacks and a real `FishingRodItem`. It returns Fabric `InteractionResult.FAIL`, whose documented logical-client behavior cancels processing without sending an attack packet. Right-click casts, entity attacks, non-rod tools and every interaction outside the Garden remain untouched.
+
+The default action-bar feedback is throttled to two seconds. Action-bar, chat and sound channels are independent, as is the zero-to-sixty-second throttle. A saved sneak-held bypass allows deliberate block interaction and can be disabled for unconditional protection. A session counter records cancelled clicks without persistent profile data. `/norodbreak` exposes toggle, status, session reset and every feedback/bypass control.
+
+Version `0.9.676` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and whitespace audits pass. Main-jar SHA-256: `148997b3f94fa39c24ef16a81f511bd0d62b3aaa724e67f6ce98b1968c4675fb`.
+
+The old `0.9.675` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-022517-0.9.676/`; only `constellation-0.9.676.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.

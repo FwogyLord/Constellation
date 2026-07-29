@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.676 (2026-07-30) — Garden rod-break protection
+
+- added Garden-only fishing-rod block-damage protection with packet-safe cancellation
+- added an optional sneak-held deliberate bypass and throttled action-bar, chat and sound feedback
+- added session prevention counts, feedback timing controls and complete `/norodbreak` commands
+- kept right-click casting, entity attacks and every non-Garden interaction unchanged
+
 ## 0.9.675 (2026-07-30) — Farming Toolkit crop icons
 
 - added crop icons for every farming-tool slot in the exact Farming Toolkit menu
