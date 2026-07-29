@@ -210,6 +210,11 @@ public final class HerculesFortune {
         return rows;
     }
 
+    public static Double latest(HerculesGardenTracker.Crop crop) {
+        if (cfg == null || crop == null || cfg.fortuneLatestByCrop == null) return null;
+        return cfg.fortuneLatestByCrop.get(crop.name());
+    }
+
     private static int pestReduction() {
         var state = HerculesPests.state();
         int alive = state == null ? pestAlive : state.alive();

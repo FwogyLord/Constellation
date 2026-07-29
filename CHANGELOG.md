@@ -1,5 +1,12 @@
 # Constellation Changelog
 
+## 0.9.667 (2026-07-30) — Jacob contest history and planning
+
+- added profile-specific parsing and persistence for all five medal thresholds from the exact Your Contests menu
+- added last-N per-crop bracket averages, time-to-medal and Farming Fortune-needed planning with custom or learned BPS
+- added hovered-contest threshold/FF detail, target-bracket selection and configurable missing/impossible presentation
+- added actual-harvest contest summaries and Personal Best Fortune-gain reporting with overflow controls
+
 ## 0.9.666 (2026-07-30) — Upcoming Jacob contests
 
 - added automatic authoritative EliteSkyBlock contest schedules with bounded background fetching and future-only persistence

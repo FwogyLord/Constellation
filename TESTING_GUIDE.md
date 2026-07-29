@@ -25,7 +25,40 @@ You do not need to test everything in one sitting. Start with the five-minute ch
 
 If all seven pass, the shared framework is healthy. Continue with whichever area you actually play.
 
-## Upcoming Jacob contests: test this release first
+## Jacob contest history and planning: test this release first
+
+### Import contest history
+
+1. Enable Hercules and `Jacob Contest History`.
+2. Open Jacob's exact `Your Contests` menu and browse several pages.
+
+- [ ] Expected: only menus whose slot 50 identifies the bulk farming-contest claim control are accepted.
+- [ ] Each contest item should contribute its crop and available Diamond, Platinum, Gold, Silver and Bronze thresholds.
+- [ ] Close and reopen the menu. Expected: records remain for the current profile.
+- [ ] Switch profiles. Expected: neither records nor learned BPS values leak between profiles.
+- [ ] Run `/jacobhistory status`. Expected: it reports the target bracket and current-profile record count.
+
+### Medal planner and hovered details
+
+- [ ] Open `Your Contests` with Time Needed enabled. Expected: the movable Jacob Medal Planner lists crops ordered against the selected bracket using the newest configured sample count.
+- [ ] Run `/jacobhistory bracket gold` and `/jacobhistory samples 10`. Expected: the planner recalculates from the latest ten matching records.
+- [ ] Enable custom BPS and run `/jacobhistory bps 19.9`. Expected: every time and FF estimate uses exactly 19.9 blocks per second.
+- [ ] Disable custom BPS and farm each crop. Expected: the planner uses learned profile/crop BPS, with 19.9 as a safe missing-data fallback.
+- [ ] Hover a historical contest item. Expected: the planner switches to that exact contest's five known thresholds and Farming Fortune requirements.
+- [ ] Toggle thresholds, FF, impossible results and missing rows independently. Expected: only the selected presentation remains.
+- [ ] Compare FF values with the latest true Farming Fortune display. Expected: crop-specific values are used and missing FF is reported, never invented.
+
+### Summaries and Personal Bests
+
+- [ ] Complete or leave a Jacob contest after farming. Expected: the summary uses locally validated harvests for total blocks and BPS, plus participation time and the last observed crop score according to enabled rows.
+- [ ] Enter a contest without breaking a matching crop. Expected with Hide Zero enabled: no empty summary is sent.
+- [ ] Change contest crops. Expected: the old crop summary closes and the new crop measurement starts cleanly.
+- [ ] Trigger the three Personal Best chat lines. Expected: one local message reports the gained crop Fortune after all three values arrive.
+- [ ] Toggle overflow handling. Expected: values beyond the normal 100-Fortune cap use the licensed overflow calculation only when enabled.
+- [ ] Run `/jacobhistory clear`. Expected: only the current profile's historical records clear.
+- [ ] Verify menu clicks and server communication remain unchanged.
+
+## Upcoming Jacob contests
 
 ### Schedule and HUD
 

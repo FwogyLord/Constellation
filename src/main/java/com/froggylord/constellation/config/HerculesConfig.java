@@ -450,6 +450,30 @@ public class HerculesConfig extends BaseConfigGroup {
     public int jacobUpcomingYear = 0;
     public long jacobUpcomingFetchedAt = 0;
 
+    // ported from SkyHanni (LGPL-3.0-or-later): features/garden/contest/FarmingContestApi.kt
+    public boolean jacobContestHistory = true;
+    public boolean jacobContestTimeNeeded = true;
+    public boolean jacobContestFfNeeded = true;
+    public boolean jacobContestSummary = true;
+    public boolean jacobContestSummaryHideZero = true;
+    public boolean jacobContestSummaryStartMessage = false;
+    public boolean jacobContestSummaryShowBlocks = true;
+    public boolean jacobContestSummaryShowBps = true;
+    public boolean jacobContestSummaryShowTime = true;
+    public boolean jacobContestSummaryShowCrops = true;
+    public boolean jacobContestPersonalBestGain = true;
+    public boolean jacobContestPersonalBestOverflow = false;
+    public boolean jacobContestCustomBps = true;
+    public boolean jacobContestPlannerShowFf = true;
+    public boolean jacobContestPlannerShowThreshold = true;
+    public boolean jacobContestPlannerShowImpossible = true;
+    public boolean jacobContestPlannerHideMissing = false;
+    public int jacobContestCustomBpsHundredths = 1990;
+    public int jacobContestHistorySamples = 10;
+    public String jacobContestTargetBracket = "GOLD";
+    public Map<String, String> jacobContestRecords = new HashMap<>();
+    public Map<String, Double> jacobContestLatestBps = new HashMap<>();
+
     public int speedWheat = 93, speedCarrot = 93, speedPotato = 93, speedNetherWart = 93;
     public int speedPumpkin = 155, speedMelon = 155, speedCocoa = 155, speedSugarCane = 328;
     public int speedCactus = 464, speedMushroom = 233, speedSunflower = 328, speedMoonflower = 328, speedWildRose = 328;

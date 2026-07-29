@@ -52,6 +52,7 @@ public abstract class ItemProtectionScreenMixin {
         com.froggylord.constellation.constellation.HerculesCropMilestones.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesDnaAnalyzer.drawSlot(graphics, screen, slot);
         com.froggylord.constellation.constellation.HerculesComposter.drawSlot(graphics, screen, slot);
+        com.froggylord.constellation.constellation.HerculesJacobHistory.drawSlot(graphics, screen, slot, mouseX, mouseY);
         if (slot != null && ItemProtection.showMarker(slot.getItem()))
             graphics.text(net.minecraft.client.Minecraft.getInstance().font, "P", slot.x + 1, slot.y + 1, 0xFF55FF55, true);
     }

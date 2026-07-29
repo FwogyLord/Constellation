@@ -1,6 +1,6 @@
 # Codex handoff: Constellation dungeon feature work
 
-Last updated: 2026-07-30 for version 0.9.666 Upcoming Jacob contests.
+Last updated: 2026-07-30 for version 0.9.667 Jacob contest history and planning.
 
 This file is the durable continuation prompt for a new coding chat. Read it completely, then read `.forge/build-principles.md` before changing anything. Keep this file updated in every feature run, before the final build and deployment.
 
@@ -10,7 +10,7 @@ This file is the durable continuation prompt for a new coding chat. Read it comp
 - Minecraft 26.2 Fabric client for Hypixel SkyBlock.
 - Java package: `com.froggylord.constellation`
 - License: GPL-3.0-only.
-- Current artifact version: `0.9.666`.
+- Current artifact version: `0.9.667`.
 - Main objective: build the useful main SkyBlock features in depth from the user's live `Froggy__Lord Skyblock 26.1.2` Prism settings and licensed local references. Dungeon selection is now broad enough; prioritize Kuudra, slayers, general inventory/UI, Garden, mining, Rift, fishing/hunting, Diana/events, and Crimson Isle based on actual enabled settings.
 - Work in one small feature run at a time. Research, port, build, boot, audit, update this document, and deploy each feature independently.
 - The user repeatedly says `keep building`; continue the queue without requesting phase approval.
@@ -1611,3 +1611,19 @@ Warnings filter against an editable set of all 13 crops, latch once per contest 
 Version `0.9.666` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `b4717d3204198497c7c20bfb5cd5e89175b8d6e4b2818065579180c51869bf90`.
 
 The old `0.9.665` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-005707-0.9.666/`; only `constellation-0.9.666.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
+
+## July 30 version 0.9.667 Jacob contest history and planning
+
+`HerculesJacobHistory.java`, `JacobPlannerHudWidget.java`, `HerculesFortune.java`, `HerculesConfig.java`, `HerculesFarming.java` and the advisory slot hook in `ItemProtectionScreenMixin.java` port SkyHanni LGPL `features/garden/contest/FarmingContestApi.kt`, `ContestBracket.kt`, `JacobContestTimeNeeded.kt`, `JacobContestFFNeededDisplay.kt`, `JacobContestStatsSummary.kt` and `FarmingPersonalBestGain.kt`.
+
+The exact `Your Contests` title plus slot-50 bulk-farming-claim lore gates parsing. Every contest item contributes its crop and all available Diamond, Platinum, Gold, Silver and Bronze thresholds. SkyBlock dates convert into a twelve-season ordinal, so last-N averages use actual newest records rather than map iteration order. Records and learned BPS values are profile-qualified; menu writes coalesce to one tick save.
+
+The movable planner targets any bracket and uses the newest one-to-fifty matching records per crop. It combines averaged thresholds, custom or learned per-crop BPS, the licensed crop base-drop table and the latest true Farming Fortune to show time-to-medal and required FF. Missing and impossible results, threshold values, FF values and sample count are independently configurable. Hovering one historical item replaces averages with its exact thresholds.
+
+Contest summaries count only authoritative locally attacked-and-confirmed crop harvests already emitted by `HerculesGardenTracker`. Crop changes close the old sample, sidebar disappearance closes the run, and final collected score is retained before state clears. Blocks, BPS, participation time, collected crops, start message and zero-run suppression are independent. The three exact Personal Best messages are joined before reporting gained crop Fortune; the licensed 13-crop increment table and optional overflow calculation are used.
+
+`/jacobhistory` exposes status, current-profile clear, bracket, sample count, custom BPS and every operational/presentation toggle. It never changes or cancels a menu click and sends no server command or gameplay packet.
+
+Version `0.9.667` built with exactly 11 successful tests and zero failures. The headless client exited at healthy timeout 124; the same process's Minecraft runtime log loaded 138 rooms across nine shapes, initialized all 14 constellations and contained zero mixin-apply, crash-report, fatal-error, `IllegalClassLoadError`, `MixinTransformerError`, or `MixinApplyError` signatures. Source-credit, forbidden-source, symbol and user-facing-copy audits pass. Main-jar SHA-256: `6ca0e0d8a8caabf0a439c8b04e7c596037ebff1e8159c2c216cb793b98ef71bf`.
+
+The old `0.9.666` main jar was archived at `~/Desktop/To-Delete/gather-jars/20260730-010554-0.9.667/`; only `constellation-0.9.667.jar` is live and its checksum matches the build artifact. Live Gather preferences were not rewritten.
